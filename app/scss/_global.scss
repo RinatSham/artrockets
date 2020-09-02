@@ -1,0 +1,28 @@
+html{
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+}
+ul,
+li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.section_title{
+  font-size: 36px;
+  line-height: 42px;
+}
+.section_desc{
+  max-width: 779px;
+  line-height: 19px;
+  margin: 0 auto;
+  color: #aaa;
+}

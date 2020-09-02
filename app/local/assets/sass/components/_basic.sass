@@ -1,0 +1,102 @@
+*
+  box-sizing: border-box
+  
+body
+  font-family: "Gilroy", "Arial", sans-serif
+  color: $dark
+
+.h1
+  font-size: 36px
+  font-family: "Gilroy", "Arial", sans-serif
+  font-weight: 400
+.h2
+  font-size: 24px
+  font-weight: bold
+  font-family: "Gilroy", "Arial", sans-serif
+.h3
+  font-size: 18px
+  font-weight: bold
+  font-family: "Gilroy", "Arial", sans-serif
+
+a
+  text-decoration: none
+  &:focus, &:hover
+    text-decoration: none
+
+button
+  background: none
+  border: none
+  box-shadow: none
+  cursor: pointer
+  padding: 0
+  font-family: "Gilroy", "Arial", sans-serif
+
+main
+  padding: 43px 0 0 0
+
+.text
+  font-size: 16px
+.text_md
+  font-size: 14px
+.text_sm
+  font-size: 12px
+
+.text_accent
+  color: $accent
+.text_dark
+  color: $dark
+.text_grey
+  color: $grey
+.text_light
+  color: $light
+.text_white
+  color: $white
+.text_light_grey
+  color: $lightGrey
+
+.text_center
+  text-align: center
+
+.slick-arrow
+  position: absolute
+  top: 0
+  left: 0
+  cursor: pointer
+  z-index: 10
+.slick-active, .slick-slide
+  outline: none
+.slick-dots
+  display: flex
+  justify-content: center
+  li
+    margin: 0 5px
+    cursor: pointer
+    width: 20px
+    height: 20px
+    position: relative
+    border-radius: 50%
+    &.slick-active
+      background: rgba(255, 255, 255, 0.54)
+      box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.1)
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background: #fff
+      width: 10px
+      height: 10px
+      border-radius: 50%
+    button  
+      visibility: hidden
+
+.section_title
+  margin-bottom: 28px
+
+.page_title
+  margin-bottom: 47px
+
+section
+  padding-top: 70px

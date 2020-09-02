@@ -1,0 +1,271 @@
+.card
+	background: #FFFFFF
+	border-radius: 12px 12px 12px 12px 
+	overflow: hidden
+	margin-bottom: 20px
+	transition: all .2s
+	display: flex
+	flex-direction: column
+	width: 100%
+	min-height: 475px
+	border: 1px solid $lightGrey
+	+mq(lg)
+		min-height: 369px
+	+mq(sm)
+		min-height: 475px
+	&:hover, &:focus
+		box-shadow: 6px 3px 16px rgba(0, 0, 0, 0.3)
+		+mq(sm)
+			box-shadow: none
+		.card__header_buttons
+			display: flex !important
+		.card__more_btn
+			display: flex
+	&__header
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+		min-height: 250px
+		position: relative
+		cursor: pointer
+		+mq(lg)
+			min-height: 187px
+		+mq(sm)
+			min-height: 250px
+		&_buttons
+			display: none !important
+			+center(both)
+	&__main
+		padding: 18.1px 19px 110px
+		border-radius: 0 0 12px 12px 
+		border-top: none
+		position: relative
+		flex-grow: 1
+		+mq(lg)
+			padding: 18.1px 15px 90px
+	&__title
+		+mq(lg)
+			line-height: 20px
+		+mq(sm)
+			line-height: 24px
+	&__code
+		margin-bottom: 10px
+	&__brand
+		position: absolute
+		top: -35px
+		left: 0
+	&__footer
+		display: flex
+		align-items: flex-end
+		align-items: center
+		position: absolute
+		bottom: 23px 
+		left: 19px
+		right: 19px
+		+mq(lg)
+			bottom: 18px 
+			right: 15px
+			left: 15px
+	&__price
+		font-size: 22px
+		margin-right: 10px
+		+mq(custom, max, 1250)
+			font-size: 18px
+			margin-right: 5px
+		+mq(custom, max, 1100)
+			font-size: 16px
+		+mq(lg)
+			font-size: 18px
+		+mq(sm)
+			font-size: 24px
+	&__old_price
+		text-decoration: line-through
+		font-size: 14px
+		flex-grow: 1
+		position: relative
+		bottom: -1px
+		+mq(custom, max, 1250)
+			font-size: 12px
+			margin-right: 4px
+		+mq(custom, max, 1100)
+			font-size: 11px
+		+mq(lg)
+			font-size: 12px
+		+mq(sm)
+			font-size: 14px
+	&__favourite
+		color: #B5B5B5
+		position: absolute
+		top: 16px
+		right: 20px
+		+mq(lg)
+			right: 15px
+		&:hover, &.active
+			&:before
+				content: '\e916'
+				color: $accent
+	&__more_btn.iconed_button
+		position: absolute
+		bottom: -5px
+		right: 0
+		display: none
+		+mq(custom, max, 1250)
+			width: 26.14px
+			height: 27.19px
+			bottom: -2px
+		+mq(lg)
+			bottom: 0
+			opacity: 1
+		+mq(sm)
+			display: flex
+
+.card_list
+	display: flex
+	flex-wrap: wrap
+	&__col
+		display: flex
+	&--4
+		margin: 0 -15px
+		+mq(lg)
+			margin: 0 -10px
+		.card_list__col
+			width: 24.96%
+			padding: 0 15px
+			+mq(lg)
+				width: 33.3%
+				padding: 0 10px
+			+mq(sm)
+				width: 100%
+	&--3
+		margin: 0 -16px
+		+mq(lg)
+			margin: 0 -10px
+		.card_list__col
+			width: 33.26%
+			padding: 0 16px
+			+mq(lg)
+				padding: 0 10px
+			+mq(sm)
+				width: 100%
+	&--slider
+		display: block
+		margin: -18px -14.5px
+		+mq(lg)
+			margin: -18px -10px
+		.card
+			margin: 18px 14.5px
+			+mq(lg)
+				margin: 18px 10px
+			&:hover
+				box-shadow: none
+		.slick-track
+			display: flex !important
+		.slick-slide
+			height: inherit !important
+			display: flex
+	&--horizontal
+		.card_list
+			&__col
+				width: 100%
+		.card
+			min-height: 214px
+			flex-direction: row
+			position: relative
+			&__header
+				min-height: 214px
+				flex-shrink: 0
+				width: 31%
+				position: static
+				+mq(lg)
+					width: 40%
+				&_buttons
+					top: 30px
+					right: 19px
+					left: auto
+					transform: none
+					z-index: 5
+					opacity: 1
+					+mq(lg)
+						display: block !important
+					.buttons_group__button
+						background: $light
+						&:hover
+							background: $accent
+						+mq(lg)
+							&:first-child
+								border-radius: 12px 12px 0 0
+							&:last-child
+								border-radius: 0 0 12px 12px
+			&__main
+				padding: 32.1px 135px 110px 45px
+				border-radius: 0 12px 12px 0
+				+mq(lg)
+					padding: 30px 80px 100px 30px
+			&__footer
+				left: 45px
+				+mq(lg)
+					left: 30px
+					bottom: 30px
+			&__brand
+				top: -25px
+			&__favourite
+				display: none
+			&__more_btn
+				+mq(lg)
+					display: none
+
+.card2
+	border-radius: 8px
+	padding: 13px 50px 38px 15px
+	position: relative
+	min-height: 130px
+	cursor: pointer
+	border: 1px solid $lightGrey
+	&.active
+		border: 1px solid $accent
+		box-shadow: 6px 2px 8px rgba(0, 0, 0, 0.15)
+		transition: all .2s
+		&:hover
+			cursor: unset
+		.card2
+			&__icon
+				// span:before
+				// 	color: #fff
+				// &--wallet
+				// 	.path1:before, .path2:before
+				// 		color: #fff
+				// 	.path3:before
+				// 		color: #000
+				// &--card
+				// 	.path2, .path3, .path4, .path5
+				// 		&:before
+				// 			color: #fff
+				// &--card2
+				// 	.path1, .path2, .path3, .path4, .path5
+				// 		&:before
+				// 			color: #fff
+	&__title
+		font-weight: bold
+		line-height: 19px
+	&__footer
+		position: absolute
+		bottom: 17px
+		left: 15px
+	&__icon
+		position: absolute
+		top: 13px
+		right: 11px
+		font-size: 26px
+		&--2
+			font-size: 33px
+			+mq(lg)
+				font-size: 28px
+		&--box
+			.path2:before
+				color: $accent
+		&--img
+			font-size: unset
+	&--2
+		width: 40%
+	&--unclickable
+		cursor: default

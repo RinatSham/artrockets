@@ -1,0 +1,41 @@
+.button
+  background: $accent
+  color: #fff
+  text-align: center
+  padding: 20px 46px
+  position: relative
+  border-radius: 8px
+  font-size: 10px
+  letter-spacing: 0.25em
+  display: inline-block
+  transition: all .2s
+  font-weight: bold
+  &:hover, &:focus
+    box-shadow: 6px 3px 16px rgba(0, 0, 0, 0.3)
+  &__icon
+    position: absolute
+    top: 50%
+    right: 17px
+    margin-top: -5px
+    font-size: 7px
+    color: #ffffff
+  &--accent
+    background: $accent
+    .button__icon
+      &:before
+        color: $white !important
+  &--empty
+    background: none
+    border: 1px solid $accent
+    color: #fff
+    .button__icon
+      color: $accent
+  &--empty2
+    background: none
+    border: 1px solid $accent
+    color: $dark
+    .button__icon
+      color: $accent
+  &--full_width
+    width: 100%
+    padding: 20px 35px

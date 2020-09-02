@@ -1,0 +1,196 @@
+.our_shops
+    background: $lightGrey
+    .iconed_button
+        background: $white
+        &:hover
+            background: $accent
+    .our_shops__item_toggle--active
+        background: $accent
+    &__row
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__col
+        width: 44%
+        +mq(lg)
+            width: 100%
+        &--wider
+            width: 52.7%
+    &__title
+        margin-bottom: 35px
+    &__item
+        position: relative
+        transition: all .2s
+        padding-bottom: 0
+        &--active
+            +mq(sm)
+                border-bottom: none !important
+        &_toggle
+            position: absolute
+            right: 0
+            top: 0
+            .iconed_button__icon
+                transform: rotate(90deg)
+            &--active
+                background: $accent
+                .iconed_button__icon
+                    transform: rotate(-90deg)
+                    &:before
+                        color: $white !important
+        &:not(:first-child)
+            margin-top: 30px
+        &:not(:last-child)
+            border-bottom: 1px solid #D6D6D6
+        &_title:not(.not_tab)
+            cursor: pointer
+        &_title.not_tab
+            +mq(lg)
+                cursor: pointer
+        &_title
+            display: flex
+            align-items: center
+            margin-bottom: 24px
+            font-weight: bold
+            padding-right: 48px
+            &_icon
+                font-size: 36px
+                margin-right: 7px
+            &_text
+                flex-grow: 1
+    &__contacts
+        display: flex
+        flex-wrap: wrap
+        &_item
+            width: 33.33%
+            padding-bottom: 28px
+            +mq(lg)
+                width: 25.33%
+            +mq(sm)
+                width: 100%
+            &--half_width
+                width: 50%
+                +mq(sm)
+                    width: 100%
+            &:last-child
+                +mq(sm)
+                    padding-bottom: 10px
+        &_item:not(:nth-child(3n))
+            padding-right: 10px
+            +mq(sm)
+                padding-right: 0
+    &__show
+        display: flex
+        align-items: center
+        margin-top: 10px
+        margin-bottom: 18px
+        &_button
+            margin-left: 18px
+        &:hover
+            .link
+                text-decoration: none
+            .our_shops__show_button
+                background: $accent
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25)
+                .iconed_button__icon:before
+                    color: #fff !important
+    &__button
+        margin-top: 37px
+        margin-bottom: 74px
+        +mq(sm)
+            margin-bottom: 0
+    &__marker
+        position: absolute
+        left: 0
+        top: 0
+        background: $white
+        box-shadow: 4px 2px 15px rgba(0, 0, 0, 0.3)
+        border-radius: 12px
+        padding: 20px 19px
+        width: 250px
+        transform: translate(-50%, 0)
+        &:after
+            content: ''; 
+            position: absolute
+            left: 50%
+            bottom: 100%
+            transform: translate(-50%, 0)
+            border: 10px solid transparent
+            border-bottom: 10px solid $white
+        &_container
+            position: relative
+        &_label
+            font-family: $font
+            font-size: 16px
+            margin-top: 7px
+            margin-bottom: 10px
+    &__slider
+        margin-bottom: 10px
+        max-width: 274px
+        img
+            margin: 0 auto
+        &_nav
+            img
+                max-width: 53px
+                margin: 0 auto
+                cursor: pointer
+            .slick-current
+                img
+                    border: 2px solid $accent
+            &_arrow
+                width: 10px
+                top: 50%
+                &:before
+                    color: $dark !important
+                &:hover:before
+                    color: $accent !important
+                &.prev
+                    transform: rotate(180deg) translate(0,50%)
+                    left: 0
+                &.next
+                    transform: translate(0,-50%)
+                    right: 0
+                    left: auto
+    &__slide
+        position: relative
+        img
+            width: 100%
+        &:hover
+            &:before, &:after
+                opacity: 1
+        &:before
+            content: ''
+            opacity: 0
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: rgba(0,0,0,.5)
+            transition: opacity .5s
+        &:after
+            content: '\e91f'
+            font-family: 'icomoon' !important
+            color: #fff
+            position: absolute
+            opacity: 0
+            top: 50%
+            left: 50%
+            font-size: 30px
+            transform: translate(-50%,-50%)
+            transition: opacity .5s
+            cursor: pointer
+    &--2
+        background: #ffffff
+        .our_shops__item:not(:last-child)
+            border-bottom: 1px solid $lightGrey
+        .iconed_button
+            background: #F3F3F3
+            &.our_shops__item_toggle--active
+                background: $accent
+            &:hover
+                background: $accent
+
+#map
+    border-radius: 12px
+    overflow: hidden

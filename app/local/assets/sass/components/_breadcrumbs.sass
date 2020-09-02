@@ -1,0 +1,21 @@
+.breadcrumbs
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 13px
+  +mq(lg)
+    margin-bottom: 6px
+  +mq(sm)
+    font-size: 12px
+  &__link
+    color: $grey
+    margin: 2px 0
+    &:not(:last-child)
+      text-underline-position: under
+      text-decoration-color: $lightGrey
+      &:after
+        content: '/'
+        display: inline-block
+        margin: 0 10px
+        text-decoration: none
+    &--current
+      color: $dark

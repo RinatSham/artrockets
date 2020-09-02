@@ -1,0 +1,25 @@
+.phone_block
+  position: relative
+  &__text
+    margin-top: 5px
+  &__number
+    font-size: 18px
+    transition: color .2s
+    &:hover
+        color: $accent
+  &:before
+    position: absolute
+    top: 5px
+    left: -18px
+    font-family: 'icomoon'
+    content: "\e927"
+    color: $accent
+    font-size: 11px
+  &--no_icon
+    &:before
+      display: none
+  &--lg
+    .phone_block__number
+      font-size: 24px
+    .phone_block__text
+      font-size: 14px

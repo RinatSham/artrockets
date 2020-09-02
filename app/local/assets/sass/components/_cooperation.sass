@@ -1,0 +1,76 @@
+.cooperation
+
+  &_section1
+    &__row
+      display: flex
+      flex-wrap: wrap
+    &__col1
+      width: 57%
+      +mq(lg)
+        width: 100%
+    &__col2
+      width: 43%
+      background-size: cover
+      background-size: contain
+      background-position: center bottom
+      background-repeat: no-repeat
+      min-height: 473px
+      margin-top: -87px
+
+  &_section2
+    background: $dark
+    position: relative
+    padding-bottom: 141px
+    +mq(sm)
+      padding-bottom: 73px
+    &__text.features__text
+      max-width: 781px
+    &__features_list.features__list
+      max-width: 857px
+      margin-left: auto
+      margin-right: auto
+    &__leaf
+      +center(horizontal)
+      bottom: -100px
+      top: auto
+      +mq(lg)
+        max-width: 145px
+        bottom: -70px
+      +mq(sm)
+        max-width: 90px
+        bottom: -45px
+
+  &_section3
+    padding-top: 95px
+    +mq(sm)
+      padding-top: 55px
+  &_form
+    &__text
+      max-width: 476px
+    &__row
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    &__col1
+      width: 66%
+      +mq(lg)
+        width: 100%
+    &__col2
+      width: 31.5%
+      +mq(lg)
+        width: 100%
+    &__col
+      width: 47.9%
+      +mq(xs)
+        width: 100%
+    .input_container:not(.cooperation_form__textarea_container)
+      margin-bottom: 20px
+    &__textarea
+      height: 100%
+      &_container
+        height: 100px
+        margin-bottom: 10px
+    &__form_clip.form_clip.input_container
+      margin-bottom: 0
+      +mq(sm)
+        margin-bottom: 30px

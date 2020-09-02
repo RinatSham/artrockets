@@ -1,0 +1,180 @@
+.sidebar
+	width: 278px
+	margin-right: 30px
+	flex-shrink: 0
+	&__close_icon
+		cursor: pointer
+	&__item
+		border-radius: 12px
+		border: 1px solid $lightGrey
+		margin-bottom: 21px
+		position: relative
+		+mq(lg)
+			border: none
+			margin-bottom: 0
+	&__tab_button
+		.iconed_button__icon
+			transform: rotate(90deg)
+		&_wrap
+			flex-grow: 1
+			display: flex
+			justify-content: flex-end
+	&__header
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 36px 31px 30px 27px
+		&_title
+			font-size: 26px
+		
+.sidebar__filter
+	[data-more] &_element:last-child
+		border-bottom: 1px solid $lightGrey
+	&_element
+		border-bottom: 1px solid $lightGrey
+		min-height: 48.2px
+		padding: 10px 27px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		cursor: pointer
+		user-select: none
+		transition: margin .2s, padding .2s
+		&:last-child
+			border: none
+		&:hover, &--active
+			.sidebar__filter_link_text
+				border-bottom: 1px solid $lightGrey
+		&--active
+			margin-left: 27px
+			padding-left: 0
+			& + .sidebar__filter_tab
+				& + .sidebar__filter_element
+					border-top: 1px solid $lightGrey
+		&_link
+			display: block
+			color: $dark
+			&:hover
+				color: $dark
+	&_tab
+		display: none
+	&_tab_item
+		margin-left: 65px
+		padding-left: 0
+		flex-wrap: wrap
+		.sidebar__filter_element:not(.sidebar__filter_element--active)
+			border-bottom: none
+	&_more
+		border: none
+		padding-top: 10px
+		.sidebar__filter_link_text
+			border-bottom: 1px dotted $grey
+		&:hover
+			.sidebar__filter_link_text
+				text-decoration: none
+				border-bottom: none
+	&_title
+		font-weight: bold
+		display: flex
+		align-items: center
+		justify-content: space-between
+		cursor: pointer
+		padding: 15px 27px 15px 27px
+		user-select: none
+		&_text
+			display: flex
+			align-items: center
+			font-size: 16px
+		&_badge
+			margin-left: 7px
+	&_block
+		border-bottom: 1px solid $lightGrey
+		&:last-child
+			border: none
+		&_content:not(.not_tab)
+			display: none
+		&_content
+			overflow: hidden
+			padding: 0 27px 21px 27px
+			.checkbox
+				padding-top: 10px
+			.sidebar__filter_more
+				display: block
+		&.active
+			margin-left: 0
+		&--tab.active
+			.sidebar__filter_block_content
+				display: block
+	&--checkboxs
+		display: flex
+		flex-wrap: wrap
+		.checkbox
+			width: 50%
+			&:nth-child(1), &:nth-child(2)
+				padding-top: 0
+
+.sidebar__banner
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	padding: 49px 32px 32px 32px
+	border-radius: 12px
+	border: none
+	font-size: 18px
+	&_title
+		font-size: 75px
+		font-weight: bold
+		margin-bottom: 8px
+	&_text
+		line-height: 21px
+	&_note
+		margin-top: 73px
+	&_button
+		width: 100%
+		margin-top: 38px
+
+.filter_sidebar
+	+mq(lg)
+		padding-right: 13px
+		width: 328
+		max-height: 100vh
+		overflow-y: auto
+		transition: transform .2s ease-out
+		position: fixed
+		top: 0
+		left: 0
+		width: 315px
+		z-index: 10
+		margin-right: 0
+		transform: translate(-100%, 0)
+		&.active
+			transform: none
+			z-index: 100
+	+mq(sm)
+		width: 100%
+		padding-right: 0
+		.ps__rail-y
+			display: none
+	&__inner
+		border-radius: 0 0 12px 0
+		background: #fff
+		padding-bottom: 15px
+		+mq(sm)
+			border-radius: 0
+			min-height: 100vh
+	&--search
+		.sidebar__filter_element:not(.sidebar__filter_element--active)
+			&:last-child,&:nth-last-child(2)
+				border-bottom: none
+
+.bx_filter .bx_filter_popup_result
+	display: none !important
+.smartfilter__overlay
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: rgba(235, 235, 235, .4)
+		z-index: 101
+		display: none

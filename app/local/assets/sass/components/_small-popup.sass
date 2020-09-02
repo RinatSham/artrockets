@@ -1,0 +1,217 @@
+.small_popup
+	background: #fff
+	padding: 20px 0 0 0
+	border: 1px solid $lightGrey
+	border-top: none
+	&__arrow
+		position: absolute
+		top: 2px
+		right: 65px
+		z-index: 1
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 10px 11px
+		border-color: transparent transparent #ffffff transparent
+	&__wrap
+		display: none
+		z-index: 20
+		position: absolute
+		top: calc(100% + 11px)
+		right: 15px
+		padding-top: 10px
+		+mq(xs)
+			width: 100vw
+		.ps__rail-x
+			display: none !important
+		.ps__thumb-y
+			+mq(sm)
+				background: $accent !important
+		.perfect_scrollbar
+			padding-right: 15px
+			max-height: 255px
+			overflow-y: auto
+			position: relative
+			.ps__rail-y
+				+mq(xs)
+					right: 4px !important
+	&__container
+		padding: 0 25px 0 25px
+	&__title
+		font-size: 24px
+
+.lk_popup
+	min-width: 324px
+	border-radius: 12px
+	&__header
+		display: flex
+		align-items: center
+		&_name
+			margin-bottom: 2px
+		&_icon
+			font-size: 16px
+			color: #ffffff
+			background: $accent
+			line-height: 34px
+			text-align: center
+			width: 34px
+			height: 34px
+			border-radius: 4px
+			margin-right: 14px
+	&__link
+		border-bottom: 1px solid transparent
+		text-decoration: none
+		&:hover, &.active
+			color: $dark
+	&--page
+		border-top: 1px solid #ebebeb
+		min-width: auto
+		.small_popup
+			&__container
+				padding: 0 20px
+		.lk_popup
+			&__header
+				+mq(lg)
+					display: flex
+					justify-content: space-between
+					align-items: center
+				&_name
+					+mq(xs)
+						font-size: 14px
+				&_inner
+					display: flex
+					align-items: center
+				&_icon
+					background: $lightGrey
+					color: $dark
+					+mq(lg)
+						background: $accent
+						color: #fff
+						&:before
+							content: '\e962'
+	&__footer_content
+		+mq(lg)
+			display: none
+		+mq(sm)
+			display: block
+
+.liked_popup__wrap, .cart_popup__wrap
+	padding-top: 22px
+	hr:last-child
+		display: none
+	&:before
+		content: ''
+		position: absolute
+		top: 12px
+		left: 0
+		right: 15px
+		height: 12px
+		background: #ffffff
+		border-radius: 12px 12px 0 0
+		+mq(xs)
+			right: 0
+			border-radius: 0
+
+.lk_popup__wrap
+	right: -33px
+.liked_popup__wrap
+	+mq(lg)
+		margin-left: -14px
+		z-index: 110
+	+mq(xs)
+		width: 100vw
+		margin-left: 0
+		.perfect_scrollbar
+			padding-right: 0
+		.liked_popup__footer
+			right: 0
+	&.liked_mobile
+		width: 100vw
+		right: 0 !important
+		left: 0 !important
+		margin-left: 0
+		.liked_popup__footer
+			right: 0
+		.liked_popup
+			border-radius: 0
+		.perfect_scrollbar
+			padding-right: 0
+
+.cart_popup__wrap
+	// right: 19px
+	right: auto
+	left: -374px
+	+mq(lg)
+		// right: -23px
+		right: auto
+		left: -410px
+		.small_popup__arrow
+			right: 45px
+	+mq(xs)
+		right: calc(100% - 49px)
+		width: calc(100vw)
+		left: auto
+	.small_popup__arrow
+		+mq(xs)
+			right: 20px
+.liked_popup, .cart_popup
+	border-bottom: none
+	min-width: 479px
+	+mq(xs)
+		right: -25px
+		width: 100vw
+		min-width: auto
+		border-radius: 0
+	&__button1
+		width: 33%
+		padding: 20px 15px
+		+mq(xs)
+			width: 100%
+			margin-bottom: 10px
+		.button__icon
+			right: 10px
+	&__button2
+		padding: 20px 15px
+		width: 63%
+		+mq(xs)
+			width: 100%
+	&__footer
+		display: flex
+		justify-content: space-between
+		align-items: center
+		position: absolute
+		top: calc(100% - 4px)
+		left: 0
+		right: 15px
+		background: #ffffff
+		padding-top: 22px
+		padding-bottom: 22px
+		border-radius: 0 0 12px 12px
+		border: 1px solid #EBEBEB
+		+mq(custom, max, 733)
+			top: 100%
+		+mq(xs)
+			border-radius: 0
+			right: 0
+			flex-wrap: wrap
+		+mq(sm)
+			.button
+				width: 100%
+			.cart__footer_text
+				margin-bottom: 15px
+	.cart_item
+		padding: 17px 0 29px 0
+		+mq(xs)
+			padding-bottom: 20px
+			padding-top: 20px
+	.cart_item__brand
+		position: absolute
+		top: 100%
+
+.cart_popup
+	right: 43px
+
+.open_cart, .open_liked, .lk_open
+	&.active
+		.icon_menu__icon
+			color: $accent

@@ -1,0 +1,85 @@
+.nav
+	width: 100%
+	z-index: 15
+	background: $dark
+	margin-bottom: 41px
+	+mq(lg)
+		margin-bottom: 24px
+	&--transparent
+		top: 0
+		left: 0
+		position: absolute
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.282) 73.53%, rgba(0, 0, 0, 0.06) 254.67%)
+		+mq(lg)
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.47) 73.53%, rgba(0, 0, 0, 0.1) 254.67%)
+	
+.nav_top
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+	&__container
+		display: flex
+		align-items: stretch
+		justify-content: space-between
+		position: relative
+		bottom: -1px
+	&__menu_btn
+		border: none
+		&:not(:last-child)
+			margin-right: 46px
+		&:hover, &:focus, &:active
+			border: none
+	&__btns
+		&--additional
+			.nav_top__btns_btn:not(.active)
+				visibility: hidden
+		&:not(&--additional)
+				.nav_top__btns_btn.active
+						visibility: hidden
+		&_btn.active
+			color: $accent
+			opacity: 1
+			.menu_btn
+				color: $accent
+			.btn_icon
+				display: inline-block
+				transform: rotate(180deg)
+
+.nav_main
+	padding: 23.2px 0
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+	position: relative
+	+mq(lg)
+		padding: 42px 0
+		border-bottom: none
+		&.search_active
+			padding: 29px 0
+	+mq(sm)
+		padding: 27px 0
+		&.search_active
+			padding: 16px 0
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		+mq(sm)
+			flex-wrap: nowrap
+	&__logo
+		+mq(lg)
+			+center(both)
+	&__catalog_open
+		+mq(sm)
+			font-size: 12px
+	&__phones
+		display: flex
+		justify-content: space-between
+		flex-grow: 1
+		max-width: 395px
+		margin: 0 30px 0 50px
+
+.nav_bottom
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15)
+	&__container
+		display: flex
+		align-items: center
+		justify-content: space-between
+		position: relative

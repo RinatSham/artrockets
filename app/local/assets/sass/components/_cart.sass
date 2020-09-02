@@ -1,0 +1,231 @@
+.cart_item
+  display: flex
+  width: 100%
+  padding: 25.4px 0
+  align-items: center
+  position: relative
+  &__img
+    width: 72px
+    height: 72px
+    border-radius: 6px
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    display: block
+  &__title
+    margin-bottom: 14px
+  &__button
+    font-size: 18px
+    &:not(:last-child)
+      margin-right: 25px
+    &:hover
+      color: $accent
+
+.cart
+  width: 100%
+  &__th
+    font-weight: bold
+    padding: 0 0 15px 0
+    &_icon
+      font-size: 17px
+      vertical-align: middle
+      margin-right: 4px
+      +mq(lg)
+        margin-right: 0
+  &__td, &__th
+    &:nth-child(1)
+      margin-right: 23.6px
+      width: 6%
+      align-self: flex-start
+    &:nth-child(2)
+      margin-right: 77px
+      width: 19.214%
+    &:nth-child(3)
+      margin-right: 62px
+      width: 5.847%
+    &:nth-child(4)
+      margin-right: 30px
+      width: 12%
+    &:nth-child(5)
+      width: 9.189%
+      margin-right: 68px
+    &:nth-child(6)
+      width: 13%
+      margin-right: 19px
+  &__td
+    &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7)
+      align-self: center;
+  &__footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 27px 0
+    &_buttons
+      display: flex
+    &_button
+      &:not(:last-child)
+        margin-right: 18px
+    &--abs
+      position: absolute
+      top: calc(100% - 3px)
+      left: 0
+      right: 15px
+      background: #fff
+      border-top: 1px solid #ECECEC
+      border-radius: 0 0 12px 12px
+      padding-right: 24px
+      padding-left: 24px
+      +mq(custom, max, 733)
+        top: 100%
+        right: 0
+        width: 100vw
+        border-radius: 0
+        flex-wrap: wrap
+        justify-content: center
+      .cart__footer_text
+        +mq(custom, max, 733)
+          width: 100%
+          margin-bottom: 20px
+    &_text
+      +mq(custom, max, 733)
+        width: 100%
+        text-align: center
+
+  // Маленькая корзина
+  &--small
+    .cart
+      &__footer
+        padding: 24px 45px 24px 24px
+      &__td, &__th
+        &:nth-child(1)
+          margin-right: 13px
+          width: auto
+        &:nth-child(2)
+          max-width: 190px
+          margin-right: 0
+          width: 100%
+          position: relative
+          +mq(custom, max, 733)
+            max-width: 175px
+        &:nth-child(3)
+          width: 31.647%
+          margin: 0
+          display: flex
+          justify-content: center
+          +mq(custom, max, 733)
+            width: 100%
+            justify-content: flex-start
+            padding-left: 43px
+        &:nth-child(4)
+          margin-right: 0
+          width: 30.8%
+          text-align: center
+          +mq(custom, max, 733)
+            padding-left: 43px
+            text-align: left
+            width: 100%
+            display: flex
+            .cart_item__button
+              text-align: right
+        &:nth-child(5)
+          margin-right: 0
+          width: 10.3%
+          min-width: 66px
+          margin-left: auto
+          +mq(custom, max, 733)
+            position: absolute
+            top: 30px
+            right: 25px
+            min-width: auto
+            width: auto
+
+      &__footer
+        padding: 24px
+        +mq(custom, max, 733)
+          flex-direction: column
+        &_text
+          +mq(custom, max, 733)
+            margin-bottom: 23px
+            
+    .cart_item
+      +mq(custom, max, 733)
+        align-items: flex-start
+      &__img
+        width: 30px
+        height: 30px
+      &__title
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        margin-bottom: 0
+      &__button:not(:last-child)
+        margin-right: 22px
+        +mq(custom, max, 733)
+          margin-right: 0
+          margin-bottom: 10px
+      &__button
+        +mq(custom, max, 733)
+          display: block
+      &__price
+        font-size: 18px
+      &__old_price
+        margin-left: 5px
+
+  // В поиске
+  &--search
+    .cart_item
+      padding-left: 24px
+      padding-right: 45px
+      padding-top: 24.4px
+      padding-bottom: 24.4px
+      +mq(custom, max, 733)
+        flex-wrap: wrap
+        padding-top: 20px
+        padding-bottom: 20px
+      &__price .bold
+        +mq(custom, max, 733)
+          font-weight: 400
+      &__title
+        +mq(custom, max, 733)
+          margin-bottom: 5px
+    hr:last-child
+      display: none
+  
+  // В избранном
+  &--favourite
+    .cart_item
+      +mq(custom, max, 733)
+        padding-right: 25px
+        flex-wrap: wrap
+      &__old_price
+        margin-left: 0
+      &__title
+        margin-bottom: 5px
+      &__price
+        +mq(custom, max, 733)
+          width: 100%
+          .bold
+            font-weight: 400
+            font-size: 18px
+        &_text
+          margin-bottom: 3px
+      &__button:not(:last-child)
+        margin-right: 15px
+    .cart
+      &__td, &__th
+        &:last-child
+          border-bottom: none
+        &:nth-child(3)
+          +mq(custom, max, 733)
+            width: 100%
+            flex-wrap: wrap
+        &:nth-child(4)
+          text-align: right
+          width: 14.8%
+          +mq(custom, max, 733)
+            position: absolute
+            right: 0
+            top: 20px
+            width: auto
+            display: flex
+            flex-direction: column

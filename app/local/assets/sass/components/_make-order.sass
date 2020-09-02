@@ -1,0 +1,251 @@
+.make_order
+  padding-bottom: 75px
+  +mq(sm)
+    padding-bottom: 55px
+  &__title
+    +mq(lg)
+      font-size: 26px
+  &__container
+    padding: 26px 28px
+    +mq(lg)
+      padding: 26px 40px
+    +mq(sm)
+      padding: 26px 20px
+  &__container2
+    padding: 0 28px
+    +mq(lg)
+      padding: 0 40px
+    +mq(sm)
+      padding: 0 20px
+  &__row
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    flex-wrap: wrap
+    +mq(lg)
+      margin: 0 -40px
+      border-top: 1px solid #ebebeb
+      border-bottom: 1px solid #ebebeb
+    +mq(sm)
+      margin: 0 -25px
+  &__col
+    box-shadow: 6px 2px 15px rgba(0, 0, 0, 0.25)
+    border-radius: 12px
+    +mq(lg)
+      box-shadow: none
+    &--1
+      width: 65.8%
+      +mq(lg)
+        width: 100%
+        border-radius: 12px 12px 0 0
+    &--2
+      width: 31.6%
+      +mq(lg)
+        width: 100%
+        border-radius: 0 0 12px 12px
+      hr
+        +mq(lg)
+          width: auto
+          margin-right: 40px
+          margin-left: 40px
+        +mq(sm)
+          margin-right: 20px
+          margin-left: 20px
+  &__item
+    &_title
+      font-size: 18px
+      display: flex
+      align-items: center
+      +mq(sm) 
+        margin-bottom: 23px
+        align-items: flex-start
+      &--order
+        +mq(sm)
+          margin-bottom: 0
+      &_text
+        flex-grow: 1
+      &_icon
+        font-size: 26px
+        margin-right: 18px
+        display: inline-block
+        vertical-align: middle
+        +mq(sm)
+          margin-top: -4px
+        &--2
+          font-size: 32px
+          margin-right: 10px
+    &_citie
+      margin-left: 5px
+    &_header
+      padding: 25px
+      +mq(lg)
+        padding: 25px 40px
+      +mq(sm)
+        padding: 25px 20px
+  &__tabs_content
+    padding: 20px 0
+  &__textarea
+    height: 100%
+    +mq(xs)
+      height: 190px
+    &_container
+      height: 100%
+  &__card_list
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    &_item
+      width: 23%
+      +mq(custom, max, 655)
+        width: 49%
+        margin-bottom: 18px
+        &:last-child
+          margin-bottom: 0
+      +mq(xs)
+        width: 100%
+      &--text
+        padding-top: 15px
+        line-height: 14px
+        +mq(lg)
+          padding-top: 0
+      &--2
+        width: 48.4%
+        margin-top: 18px
+        +mq(custom, max, 655)
+          margin-top: 0
+        &:nth-child(1), &:nth-child(2)
+          margin-top: 0
+  &__shop
+    &_row
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    &_col
+      &--1
+        padding-top: 12px
+        padding-right: 15px
+        width: 37%
+        +mq(lg)
+          width: 40%
+        +mq(xs)
+          width: 100%
+      &--2
+        width: 61.9%
+        +mq(lg)
+          width: 60%
+        +mq(xs)
+          width: 100%
+    &_item
+      display: block
+      display: flex
+      cursor: pointer
+    &_text
+      margin-left: 11px
+  &__product
+    &_item
+      padding: 21px 28px
+      display: flex
+      align-items: flex-start
+      +mq(lg)
+        padding: 21px 40px
+      +mq(sm)
+        padding: 21px 20px
+      &_main
+        +mq(lg)
+          flex-grow: 1
+          display: flex
+          justify-content: space-between
+        +mq(xs)
+          display: block
+      &--full
+        padding: 10px 0
+        align-items: center
+        &:last-child
+          padding-bottom: 0
+        &:not(:last-child)
+          border-bottom: 1px solid #EBEBEB
+        +mq(lg)
+          padding-right: 0
+          padding-left: 0
+        +mq(sm)
+          padding-left: 0
+          padding-right: 0
+          align-items: flex-start
+        .make_order__product
+          &_title
+            margin-bottom: 0
+            +mq(sm)
+              margin-bottom: 10px
+          &_item_main
+            align-items: center
+          &_quant
+            margin-right: 129px
+            +mq(sm)
+              margin-right: 9px
+          &_item_main
+            flex-grow: 1
+            display: flex
+            justify-content: space-between
+            +mq(sm)
+              display: block
+    &_photo
+      border-radius: 6px
+      width: 30px
+      height: 30px
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center center
+      margin-right: 13px
+    &_title
+      margin-bottom: 7px
+      max-width: 195px
+      line-height: 16px
+      display: block
+      color: $dark
+    &_footer
+      display: flex
+    &_quant
+      margin-right: 15px
+      +mq(lg)
+        margin-right: 129px
+      +mq(xs)
+        margin-right: 15px
+  &__map
+    border-radius: 8px
+    overflow: hidden
+  &__total_info
+    +mq(lg)
+      display: flex
+      flex-wrap: wrap
+    &_item
+      +mq(lg)
+        width: 50%
+      +mq(sm)
+        width: 100%
+  &__to_pay
+    +mq(lg)
+      display: flex
+      flex-wrap: wrap
+    &_col1
+      flex-grow: 1
+      justify-content: space-between
+      +mq(lg)
+        width: 50%
+        justify-content: flex-start
+      +mq(sm)
+        width: 100%
+    &_title
+      flex-grow: 0
+      margin-right: 20px
+    &_button
+      +mq(lg)
+        width: 38%
+      +mq(sm)
+        width: 100%
+  &__phone
+    +mq(xs)
+      margin-bottom: 20px
+
+#maker_order__map
+  min-height: 255px
+  width: 100%

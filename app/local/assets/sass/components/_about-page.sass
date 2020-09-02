@@ -1,0 +1,152 @@
+.about
+  &__overflow
+    margin-top: -50px
+
+  &_section1
+    padding-top: 130px
+    padding-bottom: 187px
+    position: relative
+    +mq(md)
+      padding-bottom: 140px
+    +mq(sm)
+      padding-top: 95px
+    +mq(xs)
+      padding-bottom: 50px
+    &__title
+      font-size: 46px
+      font-weight: 400
+      +mq(lg)
+        font-size: 36px
+    &__container
+      position: relative
+    &__leaf
+      position: absolute
+      top: -130px
+      right: 80px
+      +mq(lg)
+        right: 0
+        transform: rotate(10deg)
+
+  &_section2
+    padding-top: 78px
+    background: $dark
+    position: relative
+    padding-bottom: 70px
+    +mq(lg)
+      padding-top: 100px
+    +mq(sm)
+      padding-bottom: 55px
+    &__grapefruit
+      position: absolute
+      top: 0
+      left: 10%
+      transform: rotate(7deg)
+      +mq(md)
+        top: auto
+        bottom: -180px
+        left: 23%
+        transform: rotate(-5deg)
+    &__wave
+      position: absolute
+      bottom: calc(100% - 2px)
+      left: 0
+      width: 100%
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center
+      padding-bottom: 30.2%
+      +mq(md)
+        width: 170%
+        padding-bottom: 51.2%
+        left: -382px
+      +mq(xs)
+        left: auto
+        right: -100px
+    &__row
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    &__col1
+      position: relative
+      width: 34%
+      +mq(lg)
+        width: 100%
+        max-width: 416px
+        text-align: center
+        margin: 0 auto
+        margin-bottom: 20px
+      &_logo
+        opacity: 0.2
+        font-size: 330px
+        position: absolute
+        top: -159px
+        left: -41px
+        +mq(lg)
+          +center(both)
+      .h1
+        z-index: 1
+        position: relative
+      &_text
+        z-index: 1
+        line-height: 19px
+        position: relative
+    &__col2
+      width: 48.4%
+      padding-top: 41px
+      +mq(lg)
+        width: 100%
+    &__features
+      display: flex
+      justify-content: space-between
+      +mq(lg)
+        justify-content: space-around
+      +mq(xs)
+        flex-direction: column
+      &_item
+        max-width: 148px
+        margin: 0 10px
+        +mq(xs)
+          margin: 0 auto
+          &:not(:last-child)
+            margin-bottom: 35px
+      &_title
+        font-size: 76px
+        color: $accent
+        margin-bottom: 9px
+      &_name
+        margin-bottom: 11px
+
+  &_section3
+    padding-top: 75px
+    &__title
+      +mq(lg)
+        margin-bottom: 20px
+    &__row
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+    &__col1
+      width: 35%
+      min-height: 460px
+      position: relative
+      display: flex
+      flex-direction: column
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center bottom
+    &__col2
+      width: 57.1%
+      +mq(lg)
+        width: 100%
+    &__tabs_content.tabs__content
+      padding-top: 57px
+      line-height: 21px
+      +mq(sm)
+        padding-top: 20px
+    .tabs__button
+      +mq(custom, max, 1260)
+        margin: 0 8px
+      +mq(lg)
+        margin: 0 23.5px
+        &:first-child
+          margin-left: 0

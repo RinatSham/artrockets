@@ -1,0 +1,719 @@
+.menu
+	display: flex
+	flex-wrap: wrap
+	&__item
+		display: block
+		line-height: 15px
+		margin-right: 36px
+		&:hover, &:focus
+			color: $white
+			li:not(:last-child)
+		.menu__item
+			margin-right: 35px
+
+.menu_btn
+	padding: 10px 0
+	cursor: pointer
+	border-bottom: 1px solid transparent
+	display: inline-block
+	transition: all .2s
+	&:hover, &:focus
+		border-bottom: 1px solid $accent
+	&--text_dashed
+		padding: 0
+		&:hover, &:focus
+			border-bottom: 1px dashed $accent
+	&--text_hover
+		padding: 13px 18px
+		margin-right: 0 !important
+		border: none
+		&:hover, &:focus
+			border: none
+			color: $white
+			background: $accent
+
+.btn_icon
+	vertical-align: middle
+	margin-left: 5px
+	font-size: 6px
+	transition: all .2s
+	display: inline-block
+	transform: rotate(0)
+
+.icon_menu
+	display: flex
+	&__item
+		border-right: 1px solid #454545
+		position: relative
+		&.active
+			z-index: 16
+		+mq(xs)
+			border: none
+		&_inner
+			padding: 0 32.9px
+			display: flex
+			align-items: center
+			+mq(lg)
+				padding: 0 20px
+			+mq(xs)
+				padding: 0 8px
+			&:not(.disabled)
+				cursor: pointer
+			&.disabled
+				.icon_menu__icon, .icon_menu__badge
+					cursor: default
+		&:first-child
+			.icon_menu__item_inner
+				padding-left: 0
+		&:last-child
+			border: none
+			.icon_menu__item_inner
+				padding-right: 0
+		&:hover, &:focus
+			.icon_menu__icon:before
+				color: $accent
+			.icon_menu__item_inner.disabled
+				.icon_menu__icon:before
+					color: #ebebeb
+		.badge
+			margin-right: 0
+	&__icon
+		cursor: pointer
+		font-size: 19px
+		color: $lightGrey
+		+mq(lg)
+			font-size: 16px
+	&__badge
+		margin: 0 7px
+		cursor: pointer
+	&__price
+		font-weight: bold
+		margin-left: 13px
+
+.catalog_open_btn
+	display: flex
+	align-items: center
+	font-size: 15px
+	&__icon
+		margin-right: 14px
+		+mq(sm)
+			margin-right: 6px
+	&.active
+		background: $accent
+		padding: 12px 19px
+		.hamburger span
+			display: none
+		.catalog_open_btn__icon
+			color: #ffffff
+			width: auto
+			font-size: 13px
+			&:before
+				content: '\e950'
+				font-family: 'icomoon' !important
+	&.active
+		z-index: 130
+
+.hamburger
+	position: relative
+	display: inline-block
+	width: 20px
+	+mq(sm)
+		width: 14px
+		height: 10px
+	span
+		content: ''
+		transition: all .2s ease-in-out
+		display: block
+		width: 100%
+		height: 3.08px
+		background: $accent
+		border-radius: 1px
+		+mq(sm)
+			height: 2px
+		&:not(:last-child)
+			margin-bottom: 2px 
+		&:nth-child(1)
+			top: 0
+		&:nth-child(2)
+			top: 5px
+		&:nth-child(3)
+			bottom: 0
+	&:hover
+		span
+			&:nth-child(2)
+				width: 70%
+			&:nth-child(3)
+				width: 45%
+	&_hover
+		&:hover
+			.hamburger
+				span
+					&:nth-child(2)
+						width: 70%
+					&:nth-child(3)
+						width: 45%
+	&--white
+		span
+			background: $white
+
+.buttons_group
+	display: flex
+	&__button
+		background: #fff
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 52px
+		height: 44px
+		transition: all .2s
+		&:first-child
+			border-radius: 8px 0 0 8px
+		&:last-child
+			border-radius: 0 8px 8px 0
+		&:hover
+			background: $accent
+			.buttons_group__icon:before
+				color: #fff !important
+		&.active
+			.icon-hurt
+				&:before
+					content: '\e916'
+					color: $accent !important
+			.icon-cart
+				&:before
+					color: $accent !important
+			&:hover
+				.icon-hurt, .icon-cart
+					&:before
+						color: #fff !important
+	&__icon:before
+		font-size: 20px
+		color: #B5B5B5 !important
+
+.iconed_button, .text_button
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 35px
+	background: #F3F3F3
+	border-radius: 6px
+	width: 34px
+	transition: all .15s
+	cursor: pointer
+	position: relative
+	&__icon
+		pointer-events: none
+		display: flex
+		color: $dark
+		font-size: 11px
+		transition: all .2s
+	&:hover
+		background: $accent
+		text-decoration: none
+		color: #ffffff
+		box-shadow: 6px 3px 16px rgba(0,0,0,.3)
+		.iconed_button__icon:before
+			color: #fff !important
+	&--sm
+		width: 25px
+		height: 25px
+		font-size: 12px
+		font-weight: bold
+	&_hover
+		&:hover, &:focus
+			.iconed_button
+				background: $accent
+				text-decoration: none
+			.iconed_button__icon:before
+				color: #fff !important
+	&.active
+		background: $accent
+		text-decoration: none
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25)
+		.iconed_button__icon
+			transform: rotate(-90deg)
+		.iconed_button__icon:before
+			color: #fff !important
+	&.hovered
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25)
+		background: $accent !important
+		.iconed_button__icon:before
+			color: #fff !important
+	&--hover_shadow
+		&:hover
+			box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25)
+
+.feedback_buttons
+	display: flex
+	align-items: center
+	width: 100%
+	justify-content: center
+	&__item:not(:last-child)
+		margin-right: 16px
+	&__icon
+		font-size: 18px
+		vertical-align: middle
+		margin-right: 7px
+		color: #ffffff
+	&__text
+		vertical-align: middle
+
+.link
+	padding: 2px 0
+	text-decoration: underline
+	text-underline-position: under
+	text-decoration-style: dotted
+	font-weight: 400
+	display: inline-block
+	transition: all .2s
+	&:hover
+		text-decoration: none
+	&--dark
+		color: $dark
+		&:hover, &:focus, &:visited
+			color: $dark
+	&--grey
+		color: $grey
+		border-bottom: 1px solid transparent
+		&:hover, &:focus
+			color: #ffffff
+			border-bottom: 1px solid $accent
+	&--grey2
+		color: $grey
+		border-bottom: 1px solid transparent
+		&:hover, &.active
+			color: $grey
+			border-bottom: 1px solid $lightGrey
+
+.accent_dotted
+	border-bottom: 1px dotted $accent
+	padding: 2px 0
+	transition: border .2s
+	&--hoverable
+		&:hover
+			border-bottom: 1px dotted transparent
+
+.socials_list
+	display: flex
+	.social_link:not(:last-child)
+		margin-right: 27px
+.social_icon
+	display: block
+	transition: all .15s
+	color: $white
+.social_link
+	display: block
+	&:hover, &:focus
+		.social_icon
+			color: $accent
+	&--dark
+		.social_icon
+			color: $dark
+			&:hover, &:focus
+				color: $accent
+
+.open_filter_icon
+	background: $accent
+	color: #ffffff
+	border-radius: 6px
+	font-size: 18px
+	width: 35px
+	height: 35px
+	text-align: center
+	line-height: 35px
+	margin-right: 8px
+.open_filter_mobile
+	margin: 8px 10px
+	display: flex
+	align-items: center
+	+mq(sm)
+		width: 100%
+
+.current_filters
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: 17px
+	&:last-child
+		margin-bottom: 0
+.current_filter
+	width: 50%
+	color: $dark
+	display: flex
+	align-items: center
+	margin-top: 8px
+	padding-right: 8px
+	&:after
+		content: '\e950'
+		font-family: 'icomoon' !important
+		color: $accent
+		margin-left: 6px
+		font-size: 8px
+
+.price_filter
+	&__line
+		height: 1px
+		width: 10px
+		background: $dark
+	&__fields
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__field
+		width: 45%
+		border: 1px solid $lightGrey
+		border-radius: 4px
+		padding: 9px 16px
+	&__range
+		width: 100%
+		margin-top: 25px
+		margin-bottom: 30px\
+
+.sort
+	border: 1px solid $lightGrey
+	border-radius: 12px
+	display: flex
+	justify-content: space-between
+	margin-bottom: 25px
+	transition: border-radius .2s
+	&.active
+		border-radius: 12px 12px 12px 0
+	&__item
+		position: relative
+		height: 50px
+		display: flex
+		align-items: center
+		padding: 0 30px
+		cursor: pointer
+		border-right: 1px solid $lightGrey
+		&.active
+			.iconed_button__icon
+				transform: rotate(-180deg)
+		&--icon
+			padding: 0 21px
+			&:last-child
+				border-right: none
+			&:hover, &:focus, &.active
+				.sort__item_icon:before
+					color: $accent !important
+		&_container
+			display: flex
+			align-items: center
+			&:first-child
+				+mq(lg)
+					flex-grow: 1
+					justify-content: space-between
+		&_button
+			transform: rotate(90deg)
+		&_text
+			margin-right: 17px
+		&_icon
+			font-size: 13px
+			&:before
+				color: $dark !important
+		&_dropdown
+			position: absolute
+			top: calc(100% + 1px)
+			left: -1px
+			right: -1px
+			padding: 13px 0
+			z-index: 5
+			background: #fff
+			border-radius: 0 0 12px 12px
+			border: 1px solid $lightGrey
+			border-top: none
+			display: none
+			&_el
+				padding: 7px 29px 7px 29px
+				&:hover, &.active
+					color: $dark
+
+.tab-content>.tab-pane
+	display: flex !important
+	height: 0px
+	overflow: hidden
+
+.widget-tab.mixed-tab .tab-pane.active
+	height: auto
+
+.product_old_price
+	text-decoration: line-through
+	color: $grey
+	font-size: 18px
+	&--sm
+		font-size: 14px
+
+.change_quant
+	display: flex
+	align-items: center
+	font-size: 18px
+	&__minus
+		.iconed_button__icon
+			transform: rotate(180deg)
+	.product_quant
+		width: 60px
+		padding: 0 10px
+		text-align: center
+		font-size: 18px
+		background: none
+		border: none
+		&[type=number]::-webkit-inner-spin-button, 
+		&[type=number]::-webkit-outer-spin-button
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+			margin: 0
+
+.in_stock
+	display: flex
+	span
+		height: 25px
+		width: 7px
+		background: $lightGrey
+		border-radius: 4px
+		&:not(:last-child)
+			margin-right: 4px
+		&.active
+			background: $accent
+
+.tabs
+	&__header
+		position: relative
+	&__button
+		padding: 14px 0
+		margin: 0 23.5px
+		font-size: 16px
+		display: inline-block
+		cursor: pointer
+		*
+			cursor: pointer
+		&:first-child
+			margin-left: 0
+		&.active, &:hover, &:focus
+			color: #333
+		&.active:hover
+			cursor: unset
+			*
+				cursor: unset
+	&__line
+		content: ''
+		display: block
+		width: 100%
+		height: 7px
+		background: $lightGrey
+		border-radius: 6px
+		overflow: hidden
+		position: relative
+		&_fill
+			position: absolute
+			left: 0
+			top: 0
+			height: 100%
+			width: 20px
+			background: $accent
+			transition: all .4s cubic-bezier(0.76, 0.13, 0.32, 0.95)
+			border-radius: 6px
+	&__content
+		padding-top: 38px
+	&__row
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	&__col
+		+mq(lg)
+			width: 100%
+		&--1 
+			width: 42.9%
+		&--2
+			width: 49.1%
+	&__text_block
+		margin-bottom: 56px
+		+mq(lg)
+			margin-bottom: 35px
+		&:last-child
+			margin-bottom: 0
+			+mq(lg)
+				margin-bottom: 35px
+		.h3
+			margin-bottom: 19px
+		p
+			line-height: 17px
+	&--radio
+		+mq(sm)
+			.tabs
+				&__button
+					padding: 0
+					margin: 0
+					width: 100%
+					&:not(:last-child)
+						margin-bottom: 14px
+				&__header
+					flex-wrap: wrap
+					margin-bottom: 0
+					.radio
+						margin-right: 6px
+					label
+						display: flex
+						align-items: center
+				&__line
+					display: none
+
+.table_desc
+	&__row
+		display: flex
+		justify-content: space-between
+		padding: 15.5px 0
+		border-bottom: 1px solid $lightGrey
+		> span
+				width: 50%
+				flex-shrink: 0
+				&:last-child
+						text-align: right
+
+.slider_dots
+	display: flex
+	justify-content: center
+	align-items: center
+	margin-top: 13px
+	.slick-arrow.next
+		order: 3
+		margin-left: 38px
+	.slick-dots
+		order: 2
+	.slick-arrow.prev
+		order: 1
+		transform: rotate(180deg)
+		margin-right: 38px
+	.slick-dots
+		.slick-active
+			background: rgba($accent, .54)
+			&:before
+				background: $accent
+	&__button
+		position: static
+
+	&--grey
+		.slick-dots li:before
+			background: $lightGrey
+
+	&--white
+		.iconed_button
+			background: #fff
+			&:hover
+				background: $accent
+		.slick-dots li:before
+			background: #AAAAAA
+
+.product_price
+	+mq(lg)
+		font-size: 36px
+	+mq(sm)
+		font-size: 36px
+	&--sm
+		font-size: 24px
+
+#map-0
+	border-radius: 12px
+	overflow: hidden
+
+.catalog_main
+	padding-bottom: 75px
+	+mq(sm)
+		padding-bottom: 55px
+
+.icon-hurt
+	&.active
+		&:before
+			content: '\e916'
+			color: $accent
+.icon-cart
+	&.active
+		color: $accent
+
+.tooltip
+	background: #fff
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15)
+	border-radius: 8px
+	padding: 19px 22px
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: calc(100% - 8px)
+		left: 98px
+		width: 16px
+		height: 16px
+		transform: rotate(45deg)
+		background: #ffffff
+
+.list_dotted
+	li
+		display: flex
+		align-items: center
+	li:before
+		content: ''
+		width: 6px
+		height: 6px
+		border-radius: 50%
+		background: $accent
+		margin-right: 7px
+
+.list_badge
+	li
+		display: flex
+	&__badge
+		margin-right: 11px
+		width: 25px
+		height: 25px
+		font-size: 14px
+		line-height: 25px
+		flex-shrink: 0
+
+.badged_link
+	display: flex
+	align-items: flex-start
+	.badge
+		margin-right: 6px
+		+mq(sm)
+			margin-right: 4px
+
+.form_clip
+	display: block
+	position: relative
+	cursor: pointer
+	&__text
+		text-overflow: ellipsis
+		overflow: hidden
+		white-space: nowrap
+		max-width: 250px
+		display: inline-block
+		vertical-align: top
+	&__icon
+		font-size: 15px
+		margin-right: 5px
+	input
+		visibility: hidden
+		position: absolute
+		z-index: -1
+		top: 
+		left: 0
+		right: 0
+
+.form_submitted
+	display: flex
+	align-items: center
+	display: none
+	&__icon
+		color: #fff
+		background: $accent
+		border-radius: 50%
+		width: 18px
+		height: 18px
+		font-size: 7px
+		line-height: 18px
+		text-align: center
+		margin-right: 12px
+
+.errortext
+	margin-bottom: 15px
+	color: #cc4f4f
+	display: inline-block

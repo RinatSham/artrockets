@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="popup_opened">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Medar</title>
+        <meta name="format-detection" content="telephone=no">
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/local/assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/local/assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/local/assets/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/local/assets/img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/local/assets/img/favicon/safari-pinned-tab.svg" color="#787878">
+        <link rel="shortcut icon" href="/local/assets/img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="/local/assets/img/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="/local/assets/fonts/iconmoon/style.css">
+        <link rel="stylesheet" href="/local/assets/css/main.min.css">
+
+        <script src="/local/assets/libs/jquery.min.js"></script>
+        <script src="/local/assets/js/all.js"></script>
+        
+        <!-- Preloader -->
+        <style>
+            .preloader {
+            background: #333333;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 999999;
+            }
+            .preloader__container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            }
+            .preloader__icon--1 {
+            transition: all 1s;
+            top: 0;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translate(-50%);
+            display: none;
+            }
+            .preloader__icon--1.active {
+            opacity: 0;
+            }
+            .preloader__icon--2 {
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: all 1s ease-in-out;
+            transform-origin: 50% 50%;
+            }
+            .preloader__icon--2.active {
+            transform: scale(1);
+            visibility: visible;
+            opacity: 1;
+            }
+            .preloader__dot_list {
+            display: flex;
+            justify-content: center;
+            }
+            .preloader__dot {
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            width: 11px;
+            height: 11px;
+            margin: 0 6px;
+            margin-top: 53px;
+            position: relative;
+            animation: dots 1.2s infinite ease-in-out;
+            }
+            .preloader__dot:nth-child(1) {
+            animation-delay: 0;
+            }
+            .preloader__dot:nth-child(2) {
+            animation-delay: .2s;
+            }
+            .preloader__dot:nth-child(3) {
+            animation-delay: .4s;
+            }
+            .preloader__dot:nth-child(4) {
+            animation-delay: .6s;
+            }
+            .preloader__dot:nth-child(5) {
+            animation-delay: .8s;
+            }
+            .preloader__dot--accent {
+            background: #54c5b0;
+            border: none;
+            }
+            @keyframes dots {
+            0% {
+            top: 0;
+            }
+            20% {
+            top: -14px;
+            }
+            40%, 100% {
+            top: 0;
+            }
+            }
+        </style>
+    </head>
+    <body>
+
+    <script>
+    var ourShops = [
+                
+            {
+                point: [55.830296,49.085959],
+                text: 'ул. Волгоградская, д.12',
+                images: [
+                                                                        '/upload/resize_cache/iblock/2ab/250_250_1/2ab8913dc828b1a9c5b90e43dacb5ec1.jpg',
+                                                    '/upload/resize_cache/iblock/497/250_250_1/4972714884bf88f57693fa85de86578f.jpg',
+                                                    '/upload/resize_cache/iblock/d50/250_250_1/d50ce58321314551f00b2faf2eff0f0e.jpeg',
+                                                            ]
+            },
+        
+                
+            {
+                point: [55.742559,49.211894],
+                text: 'ул. Юлиуса Фучика, д.14',
+                images: [
+                                                                        '/upload/resize_cache/iblock/23c/250_250_1/23c27519d9562f765269d4d89c92691b.jpg',
+                                                    '/upload/resize_cache/iblock/a35/250_250_1/a3585259095143b5660597849c7949d3.jpg',
+                                                    '/upload/resize_cache/iblock/96d/250_250_1/96d361f995ecb81bb63918ca0366e839.jpg',
+                                                            ]
+            },
+        
+            ];
+        </script>
+        
+
+ <!-- Preloader white -->
+ <div class="preloader preloader--white" style="display: none">
+	<div class="preloader__container">
+        <div class="preloader__icon">
+            <img src="/local/assets/img/shadowed-logo.png" alt="">
+        </div>
+		<div class="preloader__dot_list preloader__dot_list--grey">
+			<div class="preloader__dot"></div>
+			<div class="preloader__dot preloader__dot--accent"></div>
+			<div class="preloader__dot"></div>
+			<div class="preloader__dot preloader__dot--accent"></div>
+			<div class="preloader__dot"></div>
+		</div>
+	</div>
+</div>
+<!-- Preloader white END -->
+        <div class="full_overlay scrollable close_search mobile_menu_close filter_close"></div>
+        <header class="nav <? if( $_SERVER['REQUEST_URI'] == "/local/html/" || $_SERVER['REQUEST_URI'] == "/") echo 'nav--transparent'; ?>">
+            <!-- Nav Top -->
+            <div class="nav_top fz12">
+                <div class="container nav_top__container hide_lg">
+                    <ul class="menu nav__menu">
+                        <li><a href="#" class="menu_btn menu__item text_grey">О компании</a></li>
+                        <li><a href="#" class="menu_btn menu__item text_grey">Доставка и оплата</a></li>
+                        <li><a href="#" class="menu_btn menu__item text_grey">Гарантии и возврат</a></li>
+                        <li><a href="#" class="menu_btn menu__item text_grey">Сотрудничество</a></li>
+                        <li><a href="#" class="menu_btn menu__item text_grey">Контакты</a></li>
+                    </ul>
+                    <div class="nav_top__btns">
+                        <a href="#shops_popup" class="nav_top__btns_btn open_popup menu_btn nav_top__menu_btn text_light_grey hover_accent fz12">Магазины <span class="icon-arrow-down btn_icon btn_icon--right text_accent"></span></a>
+                        <a href="#cities_popup" class="nav_top__btns_btn fz12 open_popup menu_btn nav_top__menu_btn"><span class="text_grey">Ваш город: </span><span id="currentCity" class="menu_btn menu_btn--text_dashed text_light_grey city_changable">Казань</span><span class="icon-arrow-down btn_icon btn_icon--right text_accent"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Nav Top END -->
+            <!-- Nav Main -->
+            <div class="nav_main">
+                <div class="container nav_main__container">
+                    <a href="#" class="nav_main__catalog_open catalog_open_btn show_lg hamburger_hover mobile_menu_open">
+                        <div class="hamburger hamburger--white catalog_open_btn__icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="text_white">Меню</span>
+                    </a>
+                    <a href="/" class="logo icon-logo nav_main__logo">
+                    <span class="icon-logo"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                    </a>
+                    <div class="search_overlay close_search"></div>
+                    <!-- Search -->
+                    <form class="search_block">
+                        <div class="search_block__header">
+                            <input type="text" name="search" class="input search_block__input nav_main__search_block" autocomplete="off">
+                            <button type="submit" class="search_block__icon text_accent icon-loupe"></button>
+                        </div>
+                        <!-- Search dropdown -->
+                        <div class="search_block__dropdown_wrap scrollable">
+                            <div class="search_block__dropdown_wrap2 perfect_scrollbar perfect_scrollbar2">
+                                <div class="dropdown search_block__dropdown">
+                                    <div class="cart cart--small cart--search">
+                                        <div class="cart_item">
+                                            <div class="cart__td">
+                                                <a href="#" class="cart_item__img" style="background-image:url('/local/assets/img/product.png')"></a>
+                                            </div>
+                                            <div class="cart__td">
+                                                <a href="#" class="cart_item__title h4"><span class="text_dark">Очищающая сыворотка для лица LEVRANA</span></a>
+                                            </div>
+                                            <div class="cart__td">
+                                                <div class="in_stock hide_733">
+                                                    <span class="active"></span>
+                                                    <span class="active"></span>
+                                                    <span class="active"></span>
+                                                    <span class="active"></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                                <div class="fz12 show_733 mb15">
+                                                    <span class="text_grey">Наличие:</span> <span class="text_accent">много</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart__td">
+                                                <div class="fz14 cart_item__price"><span class="bold">440 руб.</span> <span class="cart_item__old_price text_grey fz12 text_crossed show_sm">12 500</span></div>
+                                            </div>
+                                            <div class="cart__td">
+                                                <button type="button" class="icon-hurt cart_item__button toggle_active"></button>
+                                                <a href="#tocart_popup" class="text_dark open_popup icon-cart cart_item__button toggle_active"></a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <footer class="cart__footer cart__footer--abs">
+                                <div class="fz18 cart__footer_text">Всего найдено: 343 товара</div>
+                                <div class="cart__footer_buttons">
+                                    <a href="#" class="cart__footer_button button">ВСЕ РЕЗУЛЬТАТЫ<span class="button__icon icon-arrow-point-to-right"></span></a>
+                                </div>
+                            </footer>
+                        </div>
+                        <!-- Search dropdown END -->
+                    </form>
+                    <!-- Search END -->
+                    <div class="text_right search_block__cross showWhenSearch">
+                        <a class="showWhenSearch close_search icon-close"></a>
+                    </div>
+                    <div class="phone_block hide_lg hideWhenSearch">
+                        <a href="tel:88432111999" class="phone_block__number text_white">8 (843) 211-19-99</a>
+                        <div class="phone_block__text fz12 text_grey">Казань</div>
+                    </div>
+                    <div class="phone_block hide_lg hideWhenSearch">
+                        <a href="tel:88002111999" class="phone_block__number text_white">8 (800) 211-19-99</a>
+                        <div class="phone_block__text fz12 text_grey">Казань</div>
+                    </div>
+                    <div class="icon_menu hideWhenSearch">
+                        <div href="#" class="icon_menu__item">
+                            <div class="icon_menu__item_inner open_search">
+                                <div class="icon-loupe icon_menu__icon"></div>
+                            </div>
+                        </div>
+                        <div href="#" class="icon_menu__item hide_lg">
+                            <div class="icon_menu__item_inner lk_open">
+                                <div class="icon-user icon_menu__icon"></div>
+                            </div>
+                            <!-- Личный кабинет -->
+                            <div class="small_popup__wrap lk_popup__wrap">
+                                <div class="small_popup__arrow"></div>
+                                <div class="small_popup lk_popup text_left">
+                                    <div class="small_popup__container">
+                                        <div class="small_popup__title mb25">Личный кабинет</div>
+                                        <div class="lk_popup__header mb20">
+                                            <div class="lk_popup__header_icon icon-user"></div>
+                                            <div>
+                                                <div class="bold lk_popup__header_name">Третьякова Александра</div>
+                                                <div class="text_grey fz12">info@alexandra.ru</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="mb15">
+                                    <div class="small_popup__container fz12">
+                                        <a href="#" class="text_grey link link--grey2 mb15">Мои заказы</a>
+                                        <div class="badge badge--white icon_menu__badge">2</div>
+                                        <br>
+                                        <a href="#" class="text_grey link link--grey2 mb15">Избранное</a>
+                                        <div class="badge badge--white icon_menu__badge">2</div>
+                                        <br>
+                                        <a href="#" class="text_grey link link--grey2 mb15 text_underline text_underline--hoverable">Персональные данные</a><br>
+                                    </div>
+                                    <hr class="mb20">
+                                    <div class="small_popup__container">
+                                        <a href="#login_popup" class="open_popup button button--empty2 mb20">ВЫЙТИ <span class="button__icon icon-arrow-point-to-right"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Личный кабинет END -->
+                        </div>
+                        <div href="#" class="icon_menu__item hide_xs">
+                            <div class="icon_menu__item_inner open_liked" data-popup-left="119" data-popup-top="11">
+                                <div class="icon-hurt icon_menu__icon"></div>
+                                <div class="badge icon_menu__badge">2</div>
+                            </div>
+                        </div>
+                        <div class="icon_menu__item">
+                            <div class="icon_menu__item_inner open_cart">
+                                <a href="#" class="icon-cart icon_menu__icon"></a>
+                                <div class="badge icon_menu__badge hide_xs">2</div>
+                                <div class="icon_menu__price_wrap text_light_grey fz12">
+                                    <span class="icon_menu__price hide_lg">880</span><span class="hide_lg"> руб.</span>
+                                </div>
+                            </div>
+                            <!-- Корзина -->
+                            <div class="small_popup__wrap cart_popup__wrap scrollable">
+                                <div class="small_popup__arrow"></div>
+                                <div class="perfect_scrollbar">
+                                    <div class="small_popup cart_popup text_left">
+                                        <div class="small_popup__container">
+                                            <div class="small_popup__title">Корзина</div>
+                                        </div>
+                                        <div class="small_popup__container">
+                                            <div class="cart cart--small cart--favourite">
+                                                <div class="cart_item">
+                                                    <div class="cart__td">
+                                                        <a href="#" class="cart_item__img" style="background-image:url('/local/assets/img/product.png')"></a>
+                                                    </div>
+                                                    <div class="cart__td">
+                                                        <a href="\#" class="cart_item__title h4 text_dark mb5"><span class="text_dark">Очищающая сыворотка для лица LEVRANA</span></a>
+                                                        <div class="fz12 text_grey cart_item__brand hide_733">Бренд: LEVRANA</div>
+                                                    </div>
+                                                    <div class="cart__td">
+                                                        <div class="fz12 show_733 mb15">
+                                                            <span class="text_grey">Наличие:</span> <span class="text_accent">много</span>
+                                                        </div>
+                                                        <div class="cart_item__price">
+                                                            <div class="bold fz14 cart_item__price_text">440 руб.</div>
+                                                            <div class="text_grey fz12 hide_733">4 шт</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart__td">
+                                                        <a href="#tocart_popup" class="open_popup icon-cart cart_item__button text_dark"></a>
+                                                        <button type="button" class="icon-rubbish-bin cart_item__button"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="small_popup__container liked_popup__footer">
+                                    <a href="#" class="button">В КОРЗИНУ <span class="button__icon icon-arrow-point-to-right"></span></a>
+                                </div>
+                            </div>
+                            <!-- Корзина END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Nav Main END -->
+            <!-- Nav Bottom -->
+            <div class="nav_bottom hide_lg">
+                <div class="container nav_bottom__container">
+                    <a href="#" class="catalog_open_btn toggle_catalog hamburger_hover">
+                        <div class="hamburger catalog_open_btn__icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="text_white">Каталог косметики</span>
+                    </a>
+                    <!-- Меню-каталог -->
+                    <div class="catalog_menu">
+                        <div class="catalog_menu__content">
+                            <div class="catalog_menu__overlay close_catalog"></div>
+                            <div class="catalog_menu__col" style="background-image: url('/local/assets/img/catalogMenu/1.jpg')">
+                                <a href="#" class="catalog_menu__title bold fz18">Для стилистов</a>
+                                <div class="catalog_menu__list mb35">
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                </div>
+                                <a href="#" class="catalog_menu__button button">ПЕРЕЙТИ В РАЗДЕЛ<span class="button__icon icon-arrow-point-to-right"></span></a>
+                            </div>
+                            <div class="catalog_menu__col" style="background-image: url('/local/assets/img/catalogMenu/2.jpg')">
+                                <a href="#" class="catalog_menu__title bold fz18">Для стилистов</a>
+                                <div class="catalog_menu__list mb35">
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                </div>
+                                <a href="#" class="catalog_menu__button button">ПЕРЕЙТИ В РАЗДЕЛ<span class="button__icon icon-arrow-point-to-right"></span></a>
+                            </div>
+                            <div class="catalog_menu__col" style="background-image: url('/local/assets/img/catalogMenu/3.jpg')">
+                                <a href="#" class="catalog_menu__title bold fz18">Для стилистов</a>
+                                <div class="catalog_menu__list mb35">
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                </div>
+                                <a href="#" class="catalog_menu__button button">ПЕРЕЙТИ В РАЗДЕЛ<span class="button__icon icon-arrow-point-to-right"></span></a>
+                            </div>
+                            <div class="catalog_menu__col" style="background-image: url('/local/assets/img/catalogMenu/4.jpg')">
+                                <a href="#" class="catalog_menu__title bold fz18">Для стилистов</a>
+                                <div class="catalog_menu__list mb35">
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                    <a href="#" class="catalog_menu__link fz14"><span class="catalog_menu__link_text">Сыворотки</span> <span class="catalog_menu__quant">(329)</span></a>
+                                </div>
+                                <a href="#" class="catalog_menu__button button">ПЕРЕЙТИ В РАЗДЕЛ<span class="button__icon icon-arrow-point-to-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Меню-каталог END -->
+                    <ul class="menu fz14">
+                        <li><a href="#" class="menu_btn menu__item menu_btn--text_hover text_white">Бумажные изделия</a></li>
+                        <li><a href="#" class="menu_btn menu__item menu_btn--text_hover text_white">Популярные товары</a></li>
+                        <li><a href="#" class="menu_btn menu__item menu_btn--text_hover text_white">Распродажа</a></li>
+                        <li><a href="#" class="menu_btn menu__item menu_btn--text_hover text_white">Акции</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Nav Bottom END -->
+        </header>
+        <!-- Mobile menu -->
+        <div class="mobile_menu perfect_scrollbar perfect_scrollbar2 fz14">
+            <div class="scrollable mobile_menu__inner">
+                <div class="mobile_menu__header mb5">
+                    <button class="mobile_menu_close mobile_menu__close">
+                    <span class="icon-close mobile_menu__icon"></span><span>Меню</span>
+                    </button>
+                    <a href="#cities_popup" class="fz12 open_popup"><span class="text_grey">Ваш город: </span><span id="currentCityMobile" class="menu_btn accent_dotted text_light_grey">Казань</span></a>
+                </div>
+                <a href="#login_popup" class="mobile_menu__sec text_grey open_popup">
+                    <div class="mobile_menu__sec_icon icon-user"></div>
+                    <span>Войдите в личный кабинет</span>
+                </a>
+                <a href="#" class="mobile_menu__sec text_grey open_liked open_liked_mobile show_xs" data-mobile="true" data-popup-left="0" data-popup-right="0" data-popup-top="40" data-arrow-left="25">
+                    <div class="mobile_menu__sec_icon icon-hurt"></div>
+                    Избранное
+                </a>
+                <div class="mobile_menu__sec2 text_grey">
+                    <a href="" class="mobile_menu__link">Для стилистов</a>
+                    <a href="" class="mobile_menu__link">Для косметологов</a>
+                    <a href="" class="mobile_menu__link">Для медицинских центров</a>
+                    <a href="" class="mobile_menu__link">Для nail-индустрии</a>
+                </div>
+                <div class="mobile_menu__sec2 text_grey">
+                    <a href="" class="mobile_menu__link">Бумажные изделия</a>
+                    <a href="" class="mobile_menu__link">Популярные товары</a>
+                    <a href="" class="mobile_menu__link">Распродажа</a>
+                    <a href="" class="mobile_menu__link">Акции</a>
+                </div>
+                <div class="mobile_menu__sec2 text_grey">
+                    <a href="" class="mobile_menu__link2">О компании</a>
+                    <a href="" class="mobile_menu__link2">Доставка и оплата</a>
+                    <a href="" class="mobile_menu__link2">Гарантия и возврат</a>
+                    <a href="" class="mobile_menu__link2">Сотрудничество</a>
+                    <a href="" class="mobile_menu__link2">Контакты</a>
+                    <a href="" class="mobile_menu__link2">Магазины</a>
+                </div>
+                <div class="mobile_menu__footer">
+                    <div class="phone_block mobile_menu__phone mb15">
+                        <a href="tel:88002111999" class="phone_block__number text_white">8 (800) 211-19-99</a>
+                        <div class="phone_block__text fz12 text_grey">Казань</div>
+                    </div>
+                    <div class="phone_block mobile_menu__phone">
+                        <a href="tel:88002111999" class="phone_block__number text_white">8 (800) 211-19-99</a>
+                        <div class="phone_block__text fz12 text_grey">Казань</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu END -->
+        <!-- Избранное -->
+        <div class="small_popup__wrap liked_popup__wrap text_dark">
+            <div class="small_popup__arrow"></div>
+            <div class="scrollable">
+                <div class="perfect_scrollbar">
+                    <div class="small_popup liked_popup text_left">
+                        <div class="small_popup__container">
+                            <div class="small_popup__title">Избранное</div>
+                        </div>
+                        <div class="small_popup__container">
+                            <div class="cart cart--small cart--favourite">
+                                <div class="cart_item">
+                                    <div class="cart__td">
+                                        <a href="#" class="cart_item__img" style="background-image:url('/local/assets/img/product.png')"></a>
+                                    </div>
+                                    <div class="cart__td">
+                                        <a href="\#" class="cart_item__title h4 text_dark mb5"><span class="text_dark">Очищающая сыворотка для лица LEVRANA</span></a>
+                                        <div class="fz12 text_grey cart_item__brand hide_733">Бренд: LEVRANA</div>
+                                    </div>
+                                    <div class="cart__td">
+                                        <div class="cart_item__price">
+                                            <div class="cart_item__price_text"><span class="fz14 bold">440 руб.</span> <span class="cart_item__old_price text_grey fz12 text_crossed">12 500</span></div>
+                                            <div class="text_grey fz12">4 шт</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart__td">
+                                        <a href="#tocart_popup" class="open_popup icon-cart cart_item__button text_dark"></a>
+                                        <button type="button" class="icon-rubbish-bin cart_item__button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="small_popup__container liked_popup__footer">
+                <a href="#" class="button liked_popup__button1">ИЗБРАННОЕ <span class="button__icon icon-arrow-point-to-right"></span></a>
+                <a href="#" class="button button--empty2 liked_popup__button2">ДОБАВИТЬ ВСЕ В КОРЗИНУ <span class="button__icon icon-arrow-point-to-right"></span></a>
+            </div>
+        </div>
+        <!-- Избранное END -->

@@ -1,0 +1,127 @@
+.footer
+	background: $dark
+	&__main
+		padding: 90px 0 25px
+		+mq(sm)
+			padding: 55px 0 25px
+	&__row
+		display: flex
+		flex-wrap: wrap
+	&__row2
+		display: flex
+		flex-wrap: wrap
+		width: 65.8%
+		+mq(sm)
+			width: 100%
+	&__col
+		width: 25%
+		+mq(lg)
+			width: 50%
+		&:not(:last-child)
+			padding-right: 20px
+		&--wider
+			width: 34.2%
+			+mq(lg)
+				width: 34.2%
+			+mq(sm)
+				width: 100%
+	&__logo.logo
+		margin-bottom: 55px
+		+mq(sm)
+			margin-bottom: 30px
+			font-size: 55px
+	&__contacts_row
+		+mq(sm)
+			display: flex
+			flex-wrap: wrap
+	&__phone
+		margin-bottom: 25px
+		+mq(sm)
+			width: 50%
+			.phone_block__number
+				font-size: 14px
+			.phone_block__text
+				font-size: 12px
+				margin-top: 3px
+	&__button
+		margin-top: 20px
+		+mq(lg)
+			padding: 20px 37px
+			margin-bottom: 40px
+	&__item
+		margin-top: 9px
+		margin-bottom: 47px
+		&_title
+			font-weight: bold
+			font-size: 18px
+			line-height: 22px
+			display: inline-block
+			&:hover
+				text-underline-position: under
+				text-decoration: underline
+	&__menu
+		&_link
+			display: inline-block
+			margin-bottom: 15px
+			&:hover
+				.footer__menu_link_title
+					text-underline-position: under
+					text-decoration: underline
+		li:last-child
+			.footer__menu_link
+				margin-bottom: 0
+		&_all
+			display: inline-block
+			margin-top: 22px
+			align-items: center
+			&:hover, &:focus
+				.footer__menu_all_text
+					text-decoration: underline
+					text-underline-position: under
+			&_button
+				margin-left: 18px
+				display: inline-flex
+			&_text
+				display: inline-block
+	&__socials_list
+		margin-top: 205px
+	&__bottom
+		border-top: 1px solid $accent
+		+mq(sm)
+			border-top: 1px solid #454545
+		&_container
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 15px 0 18px 0
+		&_copyright
+			+mq(sm)
+				font-size: 10px
+	&__tab_header
+		border-top: 1px solid #454545
+		width: 100%
+		text-align: left
+		color: $grey
+		padding: 13px 0
+		&.active, &:hover
+			color: $accent
+		&.active
+			border-bottom: none
+			padding-bottom: 10px
+			.footer__tab_header_icon
+				transform: rotate(-90deg)
+				
+		&_container
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&_icon
+			font-size: 10px
+			transform: rotate(90deg)
+	&__tab
+		display: none
+		overflow: hidden
+		transition: opacity .15s
+		&_link
+			margin-bottom: 8px
+			display: inline-block

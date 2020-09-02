@@ -1,0 +1,74 @@
+.feature
+  width: 19.7%
+  text-align: center
+  +mq(xs)
+    width: 100%
+    margin-bottom: 50px
+  &__icon
+    font-size: 65px
+  &__text
+    font-size: 18px
+    line-height: 22px
+    margin: 20px auto 0
+    font-weight: bold
+    max-width: 124px
+  
+.features
+  position: relative
+  background: $light
+  margin-top: 179px
+  padding-top: 87px
+  +mq(sm)
+    margin-top: 78px
+  .container
+    position: relative
+    z-index: 5
+  &__leaf
+    position: absolute
+    top: -237.4px
+    right: 16.7%
+    transform: rotate(16deg)
+    +mq(lg)
+      top: -208.4px
+    +mq(sm)
+      top: -174px
+      right: -80px
+      transform: rotate(32deg)
+  &__grapefruit
+    position: absolute
+    top: -57px
+    left: -250px
+    +mq(lg)
+      top: auto
+      bottom: -190px
+      left: -210px
+  &__wave
+    width: 100%
+    height: auto
+    position: absolute
+    bottom: calc(100% - 2px)
+    left: 0
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    padding-top: 33%
+    +mq(sm)
+      padding-top: 94%
+      left: -220px
+      width: 1000px
+      max-width: none
+  &__text
+    line-height: 19px
+    max-width: 889px
+    margin: 0 auto 54px auto
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    +mq(custom, max, 810)
+      justify-content: space-between
+    +mq(xs)
+      margin-bottom: 0
+    &--space_between
+      justify-content: space-between

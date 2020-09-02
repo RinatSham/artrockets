@@ -1,0 +1,212 @@
+.cart--2
+  margin-bottom: 75px
+  .cart
+    &__td
+      flex-shrink: 0
+      position: relative
+    &__th
+      flex-shrink: 0
+      padding-bottom: 0
+      +mq(lg)
+        font-size: 14px
+      &_clear
+        display: flex
+        align-items: center
+        &:hover
+          .link
+            text-decoration: none
+      &:nth-child(7)
+        font-size: 14px
+    &__footer
+      padding-bottom: 0
+      +mq(sm)
+        align-items: flex-start
+        flex-direction: column
+      &_text
+        +mq(lg)
+          font-size: 18px
+        +mq(sm)
+          text-align: left
+          margin-bottom: 26px
+      &_buttons
+        +mq(sm)
+          flex-wrap: wrap
+          width: 100%
+      &_button
+        +mq(sm)
+          margin: 0
+          width: 100%
+          &:first-child
+            margin-bottom: 14px
+
+    // Columns
+    &__photo
+      width: 73.03px
+      margin-right: 21.97px
+      +mq(lg)
+        width: 35px
+        margin-right: 8px
+    &__name
+      margin-right: 43.5px
+      align-self: flex-start
+      min-width: 181px
+      +mq(sm)
+        margin-right: 0
+      +mq(custom, max, 680)
+        margin-right: 0
+        padding-right: 30px
+        width: calc(100% - 43px)
+    &__in_stock
+      margin: 0 34.5px
+      width: 82px
+      +mq(custom, max, 1310)
+        margin: 0 20px
+      +mq(lg)
+        margin: 0 28.5px
+        width: 62px
+        align-self: flex-start
+        margin-top: 4px
+    &__price
+      margin: 0 14.5px
+      +mq(custom, max, 1180)
+        margin: 0 5px
+      +mq(lg)
+        margin: 0 14.5px
+    &__quant
+      margin: 0 16.5px
+      width: 110px
+      +mq(custom, max, 1250)
+        margin: 0 5px
+      +mq(lg)
+        margin: 0 19.5px
+        align-self: flex-start
+        margin-top: 4px
+      +mq(sm)
+        margin-left: 0
+        margin-right: 0
+      +mq(custom, max, 680)
+        flex-grow: 1
+        margin: 0
+        margin-left: 43px
+    &__total
+      margin: 0 0 0 51px
+      width: 14%
+      +mq(custom, max, 1180)
+        margin: 0 0 0 30px
+      +mq(lg)
+        margin: 4px 0 0 28px
+        align-self: flex-start
+      +mq(sm)
+        width: 16%
+      +mq(custom, max, 680)
+        width: auto
+        margin: 0
+    &__buttons
+      width: 141px
+      margin-left: auto
+      +mq(lg)
+        align-self: flex-start
+        width: 19px
+        display: flex
+        flex-direction: column
+        margin-top: 4px
+        margin-left: unset
+      +mq(custom, max, 680)
+        position: absolute
+        top: 27px
+        right: 0
+        margin-top: 0
+
+    // cart item
+    &_item
+      border-bottom: 1px solid #EBEBEB
+      &:nth-child(2)
+        +mq(custom, max, 680)
+          padding-top: 0
+          .cart__buttons
+            top: 0
+      +mq(lg)
+        justify-content: space-between
+        padding-bottom: 33px
+      +mq(custom, max, 680)
+        flex-wrap: wrap
+        justify-content: flex-start
+      &:first-child
+        padding-top: 0
+        padding-bottom: 13px
+      &__img
+        +mq(lg)
+          width: 31px
+          height: 31px
+      &__title
+        margin-bottom: 0
+        padding-bottom: 27px
+        +mq(lg)
+          font-size: 14px
+          line-height: 17px
+          padding-bottom: 23px
+        +mq(custom, max, 680)
+          padding-bottom: 7px
+      &__brand
+        position: absolute
+        bottom: 0
+        left: 0
+        +mq(custom, max, 680)
+          position: static
+          margin-bottom: 7px
+      &__price
+        +mq(lg)
+          font-size: 18px
+      &__old_price
+        position: absolute
+        top: calc(100% + 1px)
+        +mq(lg)
+          font-size: 12px
+      &__button
+        +mq(lg)
+          margin: 0
+          &:nth-child(2)
+            margin-bottom: 11px
+          &:first-child
+            order: 1
+
+// Cart lk
+.cart
+  &--lk
+    margin-bottom: 0
+    .cart
+      &__photo
+        width: 45px
+      &__name
+        min-width: 230px
+        +mq(custom, max, 1230)
+          margin-right: 0
+        +mq(custom, max, 680)
+          min-width: auto
+      &__price
+        width: 15%
+        +mq(custom, max, 1160)
+          width: 17%
+      &__in_stock
+        margin: 0 28.5px
+      &__buttons
+        margin-right: 0
+        width: 105px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        +mq(custom, max, 1160)
+          flex-direction: column
+          align-items: flex-end
+          width: 25px
+    .cart_item
+      &__img
+        width: 45px
+        height: 45px
+      &__title
+        +mq(custom, max, 1230)
+          font-size: 16px
+      &__button:not(:last-child)
+        +mq(custom, max, 1160)
+          margin-right: 0
+          margin-bottom: 11px

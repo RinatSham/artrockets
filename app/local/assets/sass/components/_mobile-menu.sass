@@ -1,0 +1,76 @@
+.mobile_menu
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  color: $lightGrey
+  height: 100vh
+  overflow-y: auto
+  max-width: 320px
+  display: none
+  z-index: 100
+  padding: 0 13px 0 0
+  +mq(sm)
+    padding-right: 0
+    max-width: none
+    .ps__rail-y
+      right: 2px !important
+  &__inner
+    background: $dark
+    position: relative
+    padding-top: 30px
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 25px
+  &__icon
+    font-size: 15px
+    margin-right: 9px
+    vertical-align: middle
+    position: relative
+    top: -1px
+  &__sec
+    padding: 25px 25px
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #454545
+    &.active
+      color: $accent
+    &_icon
+      font-size: 16px
+      margin-right: 7px
+  &__sec2
+    padding: 25px 25px
+    border-bottom: 1px solid #454545
+  &__link
+    padding: 11px 22px
+    color: $grey
+    display: block
+    position: relative
+    border-radius: 8px
+    &:active
+      background: $accent
+      color: #fff
+      &:after
+        content: '\e93b'
+        font-family: 'icomoon' !important
+        color: #ffffff
+        font-size: 7px
+        +center(vertical)
+        right: 17.5px
+  &__link2
+    padding: 11px 21px
+    color: $grey
+    display: block
+    &.active
+      color: $accent
+  &__footer
+    padding: 28px 25px
+  &__close
+    color: #fff
+    cursor: pointer
+    display: flex
+    align-items: center
+  &__phone
+    margin-left: 19px

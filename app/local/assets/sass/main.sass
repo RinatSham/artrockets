@@ -1,0 +1,458 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "_mixins/mixins"
+
+body
+    font-family: $font
+    color: $dark
+    position: relative
+    min-width: 320px
+
+html
+    font-size: 16px
+
+input
+    font-family: $font
+
+img
+    max-width: 100%
+
+video
+    max-width: 100%
+
+main
+    padding: 0 !important
+
+.container
+    padding: 0 40px !important
+    margin: 0 auto
+    max-width: 1278px !important
+    +mq(sm)
+        padding: 0 25px !important
+
+.container-fluid
+    padding: 0 15px
+    width: 100%
+    margin: 0 auto
+
+a, button
+    cursor: pointer
+    outline: none
+    &:focus, &:hover, &:visited, &:active
+        outline: none
+
+section
+    padding-top: 75px
+
+.section2
+    padding: 100px 0
+    +mq(lg)
+        padding: 75px 0
+    +mq(sm)
+        padding: 55px 0
+.section1
+        padding-bottom: 90px
+        +mq(sm)
+                padding-bottom: 60px
+
+table
+    width: 100%
+
+.h1
+    font-size: 36px
+    font-family: $font
+    font-weight: 400
+    +mq(lg)
+        font-size: 26px
+.h2
+    font-size: 24px
+    font-weight: bold
+    font-family: $font
+.h3
+    font-size: 18px
+    font-weight: bold
+    font-family: $font
+.h4
+    display: block
+    font-weight: bold
+    font-size: 18px
+    line-height: 24px
+    &:hover
+        text-decoration: underline
+        text-underline-position: under
+        color: $lightGrey
+    &--underline
+        text-decoration: underline
+        text-underline-position: under
+        color: $lightGrey
+        &:hover
+            text-decoration: none
+
+a,button
+    outline: none
+    &:focus, &:hover, &:active, &:visited
+        outline: none !important
+
+.slick-slide, .slick-slide *
+    &:focus
+        outline: none !important
+
+button
+    background: none
+    border: none
+    box-shadow: none
+    cursor: pointer
+    padding: 0
+    font-family: $font
+    &:focus
+        outline: none
+
+.text_accent
+    color: $accent
+.text_dark
+    color: $dark
+.text_grey
+    color: $grey
+.text_light
+    color: $light
+.text_white
+    color: $white
+.text_light_grey
+    color: $lightGrey
+.text_danger
+    color: #CC4F4F
+.text_success
+    color: #459E43
+
+.fz12
+    font-size: 12px
+.fz13
+    font-size: 13px
+.fz14
+    font-size: 14px
+.fz15
+    font-size: 15px
+.fz16
+    font-size: 16px
+.fz17
+    font-size: 17px
+.fz18
+    font-size: 18px
+.fz19
+    font-size: 19px
+.fz20
+    font-size: 20px
+
+.lh19
+    line-height: 19px
+
+.bold
+    font-weight: bold
+
+.mb0
+    margin-bottom: 0 !important
+.mb5
+    margin-bottom: 5px
+.mb10
+    margin-bottom: 10px
+.mb15
+    margin-bottom: 15px
+.mb20
+    margin-bottom: 20px
+.mb25
+    margin-bottom: 25px
+.mb30
+    margin-bottom: 30px
+.mb35
+    margin-bottom: 35px
+.mb40
+    margin-bottom: 40px
+.mb45
+    margin-bottom: 45px
+.mb50
+    margin-bottom: 50px
+.mb55
+    margin-bottom: 55px
+.mb60
+    margin-bottom: 60px
+.mb65
+    margin-bottom: 65px
+.mb70
+    margin-bottom: 70px
+.mb75
+    margin-bottom: 75px
+
+.text_regular
+    font-weight: 400 !important
+
+.hide_1160
+    +mq(custom, max, 1160)
+        display: none !important
+.hide_680
+    +mq(custom, max, 680)
+        display: none !important
+.hide_lg
+    +mq(lg)
+        display: none !important
+.hide_sm
+    +mq(sm)
+        display: none !important
+.hide_sm
+    +mq(sm)
+        display: none !important
+.hide_xs
+    +mq(xs)
+        display: none !important
+.hide_733
+    +mq(custom, max, 733)
+        display: none !important
+
+.show_lg
+    +mq(custom, min, 1081)
+        display: none !important
+.show_md
+    +mq(custom, min, 993)
+        display: none !important
+.show_sm
+    +mq(custom, min, 769)
+        display: none !important
+.show_xs
+    +mq(custom, min, 577)
+        display: none !important
+.show_733
+    +mq(custom, min, 733)
+        display: none !important
+.show_680
+    +mq(custom, min, 681)
+        display: none !important
+
+.text_center
+    text-align: center
+.text_left
+    text-align: left
+.text_right
+    text-align: right
+
+.text_crossed
+    text-decoration: line-through !important
+.text_underline
+    border-bottom: 1px solid $lightGrey !important
+    padding-bottom: 2px
+    transition: all .2s
+    &--hoverable
+        &:hover
+            border-bottom: 1px solid transparent !important
+.text_dotted
+    border-bottom: 2px dotted $lightGrey !important
+    padding-bottom: 2px
+    transition: all .2s
+    &--hoverable
+        &:hover
+            border-bottom: 2px dotted transparent !important
+
+.hover_accent
+    cursor: pointer
+    transition: all .15s ease-out
+    &:hover
+        color: $accent
+.hover_accent_icon
+    cursor: pointer
+    transition: all .15s ease-out
+    &:hover:before
+        color: $accent
+
+hr
+    width: 100%
+    display: block
+    background: #EBEBEB
+    margin: 0
+    height: 1px
+    border: none
+
+.slick-arrow
+    position: absolute
+    top: 0
+    left: 0
+    cursor: pointer
+    z-index: 5
+.slick-active, .slick-slide
+    outline: none
+.slick-dots
+    display: flex
+    justify-content: center
+    li
+        margin: 0 5px
+        cursor: pointer
+        width: 20px
+        height: 20px
+        position: relative
+        border-radius: 50%
+        &.slick-active
+            background: rgba(255, 255, 255, 0.54)
+            box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.1)
+        &:before
+            content: ''
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            background: #fff
+            width: 10px
+            height: 10px
+            border-radius: 50%
+        button  
+            visibility: hidden
+
+.page_title
+    margin-bottom: 43px
+    +mq(lg)
+        font-size: 26px
+        margin-bottom: 29px
+    &--subtitled.page_title
+        margin-bottom: 12px
+    &__button
+        margin-bottom: 43px
+        font-size: 20px
+        margin-left: 20px
+        &:hover
+            color: $accent
+        +mq(lg)
+            margin-bottom: 29px
+.page_subtitle
+    max-width: 658px
+
+.main_container
+    display: flex
+
+.main__content
+    width: 100%
+
+.artrockets
+    display: flex
+    align-items: center
+    +mq(sm)
+        flex-direction: column
+        align-items: flex-start
+    .icon-artrockets
+        font-size: 21px
+        position: relative
+        top: -6px
+        margin-left: 4px
+        order: 1
+        +mq(sm)
+            font-size: 19px
+    &__text
+        transition: color .2s
+    &__text
+        +mq(sm)
+            order: 2
+            position: relative
+            left: 4px
+            font-size: 10px
+    &:hover
+        .artrockets
+            &__text
+                color: $accent
+        
+.slick-dots
+    > li
+        display: inline-block
+    > li:only-child
+        display: none
+
+.slick-arrow[aria-disabled=true]
+    display: none !important
+
+.full_overlay, .search_overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: rgba(51, 51, 51, 0.5)
+    z-index: 16
+    display: none
+    +mq(xs)
+        z-index: 15
+.search_overlay
+        z-index: 110
+
+.mfp-bg
+    background: rgba(51, 51, 51, 0.5);
+.mfp-container
+    padding-right: 20px
+    overflow: auto
+    +mq(custom, max, 1230px)
+        padding-right: 8px
+    +mq(sm)
+        padding: 0
+
+.row
+    display: flex
+
+.ps__thumb-y
+    background: $accent
+
+.ps__rail-y.ps--clicking .ps__thumb-y, .ps__rail-y:focus>.ps__thumb-y, .ps__rail-y:hover>.ps__thumb-y
+    background: $accent
+
+.perfect_scrollbar2
+    .ps__thumb-x
+        right: -20px
+    .ps__rail-y.ps--clicking .ps__thumb-y, .ps__rail-y:focus>.ps__thumb-y, .ps__rail-y:hover>.ps__thumb-y, .ps__thumb-y
+        background: rgba(255,255,255,.5)
+    .ps__rail-y:hover
+        background: none !important
+    .ps__rail-y:hover>.ps__thumb-y
+        width: 6px
+
+.ps__rail-y
+    opacity: 0.6
+
+.noUi-horizontal .noUi-handle.noUi-handle-lower[aria-valuenow="9.0"]
+    right: -31px
+.popup_opened
+    overflow: hidden
+    position: fixed
+    width: 100%
+    left: 0
+.popup_opened_catalog
+    overflow: hidden
+    width: 100%
+    left: 0
+    +mq(custom, min, 1080)
+        padding-right: 17px
+
+.mfp-wrap
+    -webkit-overflow-scrolling: touch
+    -webkit-transform: translateZ(0)
+
+.noscroll 
+    overflow: hidden
+[aria-hidden="true"]
+    display: none
+[aria-hidden="false"]
+    display: block
+
+.overflow
+    overflow: hidden
+
+.mfp-wrap
+    z-index: 1051
+
+button.mfp-close
+    display: none
+
+.product_preview__slider_arrow.slick-arrow[aria-disabled=true]
+    visibility: hidden
+
+.authorized_user
+    .nav.nav--transparent
+        margin-top: 39px
+
+.bx-core-adm-dialog
+    z-index: 1060 !important
+    
+@import './components/**/*.sass'

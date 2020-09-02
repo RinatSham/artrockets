@@ -1,0 +1,248 @@
+.popup__container_row
+	display: flex
+	justify-content: space-between
+.popup
+	background: #fff
+	border-radius: 12px
+	padding: 37px 0 40px 0
+	max-width: 380px
+	width: 100%
+	margin: 0 auto
+	position: relative
+	+mq(lg)
+		left: unset
+	+mq(sm)
+		border-radius: 0
+		min-height: 100vh
+		max-width: none
+	&--2
+		+mq(sm)
+			border-radius: 12px
+			height: auto
+			min-height: auto
+	&__row
+		display: flex
+	&__col
+		&:nth-child(1)
+			width: 47.3%
+		&:nth-child(2)
+			width: 52.7%
+	&__container
+		padding: 0 28px
+	&__title
+		font-size: 24px
+	&__cross
+		z-index: 1
+		width: 34px
+		height: 34px
+		line-height: 34px
+		text-align: center
+		background: $accent
+		color: #ffffff
+		font-size: 11px
+		border-radius: 6px
+		position: absolute
+		right: 25px
+		top: 25px
+		&:hover
+			box-shadow: 6px 3px 16px rgba(0,0,0,.3)
+	&__buttons
+		display: flex
+		align-items: center
+	&__button_login
+		margin-right: 28px
+		+mq(xs)
+			margin-right: 15px
+	.tabs__content
+		padding: 19px 0 0 0
+	
+	&__search
+		max-width: 514px
+	#cities_popup &__cities
+		&_city
+			margin-bottom: 7px
+			display: block
+			text-align: left
+		&_list
+			width: 27%
+			position: relative
+			max-height: 282px
+			overflow-y: auto
+			&_item
+				font-size: 14px
+				margin-bottom: 18.5px
+				display: block
+				&:hover, &.active
+					color: $dark
+	#cities_popup &__cities
+		&_all
+			padding: 0 36px 0 60px
+			display: flex
+			flex-wrap: wrap
+			max-height: 282px
+			position: relative
+			width: 73%
+		&_item
+			width: 20%
+			margin-bottom: 42px
+			padding-right: 20px
+			+mq(lg)
+				width: 50%
+		&_word
+			font-weight: bold
+	&--cities
+		max-width: 1203px
+		min-height: 555px
+		padding: 31px 0 55px 11px
+		.popup__title
+			font-size: 36px
+			+mq(lg)
+				font-size: 24px
+		.ps__rail-x
+			display: none
+
+	&--cities_mobile
+		width: 100%
+		overflow-y: auto
+		+mq(sm)
+			min-height: 100vh
+			position: fixed
+			overflow-y: auto
+			top: 0
+			left: 0
+		.popup__header
+			padding-left: 25px
+		.popup__cross
+			background: none
+			color: $accent
+			left: 15px
+			top: 33px
+		.popup__container
+			padding: 0 25px
+		
+		.mobile_dropdown_region .text, .mobile_dropdown_city
+			font-size: 14px
+
+	// Магазины
+	&--shops
+		max-width: 1203px
+		padding: 0
+		overflow: hidden
+		max-height: 610px
+		.popup__title
+			font-size: 36px
+		.popup__main
+			padding: 31px 0 71px 0
+		.popup__container
+			padding: 0 46px 0 42px
+		.our_shops__item_toggle
+			right: 46px
+		.our_shops__button
+			margin-bottom: 0
+
+	// Success
+	&--success.popup
+		max-width: 380px
+		margin: 0 auto
+		+mq(sm)
+			max-width: 270px
+		.popup
+			&__success_tick
+				font-size: 74px
+				display: block
+			&__container
+				padding: 0 35px
+
+	// To cart
+	&--tocart.popup
+		max-width: 380px
+		margin: 0 auto
+		+mq(sm)
+			max-width: 270px
+		.popup
+			&__success_tick
+				font-size: 74px
+				display: block
+			&__container
+				padding: 0 66px
+				+mq(sm)
+					padding: 0 17px
+
+	// One click
+	&--oneclick.popup
+		max-width: 506px
+		.cart
+			margin-bottom: 35px
+			&__photo
+				width: 30px
+				margin-right: 13px
+			&__name
+				margin: 0
+				+mq(xs)
+					padding-right: 0
+			&__quant
+				margin: 0
+				align-self: flex-start
+				+mq(xs)
+					margin-left: 43px
+			&__total
+				align-self: flex-start
+				margin: 0
+				width: auto
+
+		.cart_item
+			justify-content: space-between
+			align-items: flex-start
+			padding-right: 28px
+			padding-left: 28px
+			+mq(xs)
+				padding-bottom: 35px
+			&__main
+				display: flex
+				margin: 0
+				width: 50%
+				+mq(xs)
+					width: 100%
+			&__img
+				width: 30px
+				height: 30px
+			&__title
+				font-weight: 400
+				font-size: 14px
+				line-height: 16px
+				padding-bottom: 24px
+				+mq(xs)
+					font-weight: bold
+				a
+					color: #ebebeb
+					text-decoration: underline
+					text-underline-position: under
+					display: inline-block
+					&:hover
+						text-decoration: none
+			&__price
+				font-size: 14px
+				font-weight: bold
+				+mq(xs)
+					font-size: 18px
+					font-weight: 400
+			&__old_price
+				font-size: 12px
+				text-decoration: none
+		
+		.popup
+			&__footer
+				display: flex
+				align-items: center
+				justify-content: space-between
+				+mq(sm)
+					flex-wrap: wrap
+			&__button1, &__button2
+				+mq(xs)
+					width: 100%
+			&__button1
+				width: 36.4%
+				+mq(xs)
+					margin-bottom: 18px
+			&__button2
+				width: 58.6%

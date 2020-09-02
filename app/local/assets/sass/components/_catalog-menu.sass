@@ -1,0 +1,72 @@
+.catalog_menu
+  position: absolute
+  top: 100%
+  left: 40px
+  right: 40px
+  z-index: 120
+  overflow: hidden
+  display: none
+  &__content
+    display: flex
+    flex-wrap: wrap
+  .catalog_menu__overlay
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: rgba(51, 51, 51, 0.5)
+  &__col
+    width: 25%
+    position: relative
+    padding: 32px
+    display: flex
+    flex-direction: column
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    align-items: flex-start
+    z-index: 1
+    > *
+      z-index: 2
+      position: relative
+    &:hover
+      &:before
+        background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.92) 57.99%, rgba(255, 255, 255, 0) 207.02%)
+      .catalog_menu__quant
+        color: $grey
+      .catalog_menu__title
+        color: $dark
+      .catalog_menu__link
+        color: $dark
+      .catalog_menu__button
+        opacity: 1
+    &:before
+      content: ''
+      background: rgba(0,0,0,.6)
+      transition: background .15s
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 1
+  &__title
+    color: #ffffff
+    margin-bottom: 30px
+    transition: color .15s
+    border-bottom: 1px solid transparent
+    &:hover
+      border-bottom: 1px solid $accent
+  &__link
+    color: #ffffff
+    display: block
+    margin-bottom: 15px
+    transition: all .15s
+    &:hover &_text
+      border-bottom: 1px solid $accent
+  &__button
+    width: 100%
+    margin-top: auto
+    opacity: 0

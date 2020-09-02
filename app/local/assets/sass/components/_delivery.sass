@@ -1,0 +1,100 @@
+.delivery
+  position: relative
+  &_container
+    overflow: hidden
+  &__row
+    display: flex
+  &__col1
+    max-width: 380px
+    +mq(lg)
+      max-width: none
+  &__map
+    position: absolute
+    top: -31px
+    right: 0
+    +mq(custom, max, 1260)
+      right: -10%
+    &_tooltip
+      position: absolute
+      top: 77px
+      left: 23px
+  &__cards
+    display: flex
+    width: 100%
+    +mq(custom, max, 730)
+      flex-wrap: wrap
+      margin-bottom: 0
+    .card2
+      height: 100%
+    &--2
+      justify-content: space-between
+      flex-wrap: wrap
+      width: 63%
+      +mq(custom, max, 730)
+        margin-bottom: 50px
+      .card2
+        min-height: 133px
+        padding-bottom: 23px
+      label
+        display: block
+      .delivery__card_col2
+        width: 50%
+        +mq(xs)
+          width: 100%
+      +mq(lg)
+        width: 100%
+  &__card
+    display: block
+    &_col
+      width: 15.5%
+      padding: 0 10px
+      +mq(lg)
+        width: 25%
+      +mq(custom, max, 730)
+        width: 50%
+        margin-bottom: 18px
+      +mq(custom, max, 450)
+        width: 100%
+        margin-bottom: 18px
+        &:last-child
+          margin-bottom: 0
+      
+    &_col2
+      width: 40%
+      padding: 0 10px
+      margin-bottom: 20px
+      +mq(lg)
+        width: 25%
+      +mq(custom, max, 730)
+        width: 100%
+        &:not(:last-child)
+          margin-bottom: 18px
+      +mq(xs)
+        &:last-child
+          margin-bottom: 0
+    &:last-child
+      margin-right: 0
+  &__payment
+    &_row
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      margin-left: -10px
+      margin-right: -10px
+      +mq(custom, max, 450)
+        margin-bottom: 15px
+      &--last.delivery__payment_row
+        margin-bottom: 70px
+        +mq(sm)
+          margin-bottom: 55px
+    &_img
+      position: relative
+      right: -30px
+      top: -50px
+  &__badge_list
+    max-width: 395px
+
+  &__badge_list
+    margin-bottom: 70px
+    +mq(sm)
+      margin-bottom: 55px

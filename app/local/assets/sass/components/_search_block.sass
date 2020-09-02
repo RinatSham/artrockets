@@ -1,0 +1,90 @@
+.search_block
+	transition: opacity .2s ease-out
+	position: relative
+	width: 57.3%
+	z-index: 110
+	display: none
+	+mq(lg)
+		width: auto
+		flex-grow: 1
+	.ps__rail-x
+		display: none
+	.ps__rail-y
+		+mq(custom, max, 733)
+			right: 4px !important
+	.ps__thumb-y
+		+mq(sm)
+			background: $accent !important
+	&__header
+		position: relative
+	&__input
+		padding-right: 115px
+		border: none
+	&__icon
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		padding: 0 21px
+		cursor: pointer
+	&__cross
+		color: #ffffff
+		font-size: 18px
+		width: 9%
+		z-index: 110
+		+mq(lg)
+			width: 7%
+		+mq(custom, max, 733)
+			font-size: 12px
+			width: 10%
+	&__dropdown
+		&_wrap
+			position: absolute
+			width: calc(100% + 15px)
+			left: 0
+			top: calc(100% + 15px)
+			border-radius: 12px
+			margin-top: 12px
+			+mq(custom, max, 733)
+				left: -25px
+				top: calc(100% + 16px)
+			&:before
+				content: ''
+				position: absolute
+				top: -11px
+				left: 0
+				right: 15px
+				height: 12px
+				background: #ffffff
+				border-radius: 12px 12px 0 0
+				+mq(custom, max, 733)
+					border-radius: 0
+					width: 100vw
+		&_wrap2
+			padding-right: 15px
+			max-height: 327px
+			overflow-y: auto
+			top: calc(100% + 18px)
+			left: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			position: relative
+			+mq(custom, max, 733)
+				width: 100vw
+				border-radius: 0
+				padding-right: 0
+				max-height: 255px
+	.cart
+		&__td, &__th
+			&:nth-child(4)
+				margin-left: -10.7%
+				+mq(custom, max, 733)
+					margin-left: 0
+
+	&__preloader
+		+center(vertical)
+		right: 50px
+
+.showWhenSearch
+	display: none

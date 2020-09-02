@@ -1,0 +1,277 @@
+.input_container
+	position: relative
+	display: block
+	&__placeholder
+		+center(vertical)
+		left: 16px
+		font-size: 14px
+		color: $grey
+	&__icon
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		background: $accent
+		padding: 0 15px
+		border-radius: 0px 8px 8px 0px
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #ffffff
+		font-size: 18px
+		&--empty
+			color: $grey
+			background: none
+			cursor: pointer
+			&.active, &:hover
+				color: $accent
+		&--accent
+			color: $accent
+			background: none
+		&--small
+			font-size: 7px
+			right: 0
+			padding: 0
+			top: 0
+			transform: none
+			height: auto
+			transition: all .2s
+	&__dropdown_border
+		position: absolute
+		z-index: 1
+		top: calc(100% - 10px)
+		left: 0
+		width: calc(100% + 15px)
+		visibility: hidden
+		margin-bottom: 8px
+		opacity: 0
+		transition: all .2s
+		&:before
+			content: ''
+			height: 8px
+			position: absolute
+			border-radius: 0 0 8px 8px
+			border: 1px solid #EBEBEB
+			border-top: none
+			left: 0
+			top: 100%
+			right: 15px
+			z-index: 2
+	&__search_list
+		overflow-y: auto
+		background: #ffffff
+		border: 1px solid #EBEBEB
+		border-top: none
+		border-bottom: none
+		&_container
+			position: relative
+			overflow-y: auto
+			max-height: 266px
+			padding-right: 15px
+	&__search_item
+		border-bottom: 1px solid #EBEBEB
+		padding: 11px 17px
+		cursor: pointer
+		&:hover
+			color: $accent
+		&:last-child
+			border-bottom: none
+			padding-bottom: 3px
+	&.active
+		.input
+			border-radius: 8px 8px 0 0
+		.input_container__dropdown_border
+			visibility: visible
+			top: 100%
+			opacity: 1
+		.input_container__icon--small
+			transform: rotate(-90deg)
+	&__dropdown_toggle
+		padding: 16px
+		cursor: pointer
+	&--iconed
+		.input.valid~.success
+			right: 40px
+		.input 
+			padding-right: 60px
+
+.inputs_row
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	&--3
+		justify-content: flex-start
+		flex-wrap: nowrap
+		+mq(sm)
+			flex-wrap: wrap
+		.input_container
+			width: 31.2%
+			+mq(sm)
+				width: 100%
+			&:not(:last-child)
+				margin-right: 30px
+				+mq(sm)
+					margin-right: 0
+	&--1_2
+		justify-content: flex-start
+		flex-wrap: nowrap
+		+mq(sm)
+			flex-wrap: wrap
+		.input_container
+			&:not(:last-child)
+				margin-right: 30px
+				+mq(sm)
+					margin-right: 0
+			&:nth-child(1)
+				width: 31%
+				+mq(sm)
+					width: 100%
+			&:nth-child(2)
+				width: 65.5%
+				+mq(sm)
+					width: 100%
+	&--1_1
+		justify-content: flex-start
+		flex-wrap: nowrap
+		+mq(sm)
+			flex-wrap: wrap
+		.inputs_row__col
+			&:nth-child(1), &:nth-child(2)
+				width: 31%
+				+mq(sm)
+					width: 100%
+			&:not(:last-child)
+				margin-right: 30px
+				+mq(sm)
+					margin-right: 0
+.inputs_container
+	position: relative
+	&--half
+		width: 49%
+		+mq(xs)
+			width: 100%
+.input
+	border-radius: 8px
+	border: 1px solid $lightGrey
+	font-size: 14px
+	padding: 11px 16px
+	width: 100%
+	resize: none
+	transition: all .2s
+	-webkit-appearance: none
+	&:focus
+		outline: none
+	&--delivery
+		padding-left: 129px
+	~ .success
+		display: none
+	&.valid
+		~ .success
+			display: block
+			color: $accent
+			font-size: 10px
+			right: 18px
+			+center(vertical)
+	&.error
+		border: 1px solid #CC4F4F
+		~ .error
+			color: #CC4F4F
+			font-size: 10px
+			position: absolute
+			top: calc(100% + 4px)
+			right: 0 
+	&--popup
+		&:disabled
+			background: #fff
+	&--shadowed
+		border: 1px solid transparent
+		&:focus
+			box-shadow: 6px 2px 8px rgba(0, 0, 0, 0.15)
+
+input[type=radio]
+	width: 0
+	height: 0
+	visibility: hidden
+	position: absolute
+input[type=radio]:checked + .radio:after
+	display: block
+.radio
+	width: 20px
+	height: 20px
+	border: 1px solid $lightGrey
+	position: relative
+	border-radius: 50%
+	flex-shrink: 0
+	&:after
+		content: ''
+		display: none
+		position: absolute
+		+center(both)
+		background: $accent
+		width: 14.5px
+		height: 14.5px
+		border-radius: 50%
+
+.checkbox
+	display: flex
+	font-size: 14px
+	position: relative
+	&:last-child
+		margin-bottom: 0
+	.error
+		left: 0
+		right: auto
+	label
+		cursor: pointer
+		&.error
+			cursor: default
+	.checkbox_icon
+		display: flex
+		position: relative
+		cursor: pointer
+	.checkbox_icon:before
+		content: ''
+		display: block
+		border: 1px solid $accent
+		border-radius: 4px
+		margin-right: 8px
+		width: 14px
+		height: 14px
+		flex-shrink: 0
+	input[type=checkbox]
+		visibility: hidden
+		position: absolute
+		z-index: -1
+		top: 0
+		left: 0
+	input:checked
+		~ label .checkbox_icon:before, ~ .checkbox_icon:before
+			content: '\e930'
+			background: $accent
+			border: 1px solid transparent
+			font-family: 'icomoon' !important
+			font-size: 8.74px
+			color: #fff
+			line-height: 14px
+			font-size: 7px
+			text-align: center
+	&--grey
+		& > div:before
+			border: 1px solid $lightGrey
+	&.disabled
+		.checkbox_icon:before
+			border: 1px solid #F3F3F3
+			background: #F3F3F3
+		label
+			color: #aaa
+
+.time_range
+	&__container
+		display: flex
+		align-items: center
+	&__sep
+		width: 10px
+		height: 1px
+		background: $dark
+		margin: 0 8px
+		flex-shrink: 0
